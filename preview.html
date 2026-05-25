@@ -1,0 +1,2506 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marco Polo Preview</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main class="store-shell" id="storeShell">
+      <section class="store-panel">
+        <div class="store-step" data-store-step="landing">
+          <div class="landing-hero">
+            <div class="landing-copy">
+              <img class="landing-logo" src="/assets/logo-tech.png" alt="Marco Polo" />
+              <h1>Un perfil vivo para quien no puede explicar que le pasa.</h1>
+              <p class="brand-copy">Identidad, diario, avisos seguros y red de cuidado para mascotas, tutores, veterinarios y rescate.</p>
+              <div class="landing-proof">
+                <span>Vista tutor</span>
+                <span>Perfil publico</span>
+                <span>Buzon veterinario</span>
+                <span>Shop + activacion</span>
+              </div>
+              <div class="skin-rail" aria-label="Skins Marco Polo">
+                <span style="--skin:#eaf6ff">Claro medico</span>
+                <span style="--skin:#38bdf8">Nocturno tech</span>
+                <span style="--skin:#54e88b">Rescate</span>
+                <span style="--skin:#ffc56b">Premium tag</span>
+              </div>
+            </div>
+            <div class="landing-media" aria-label="Vista emocional Marco Polo">
+              <img src="/assets/landing-intro.png" alt="Mascotas y vistas de Marco Polo" />
+              <div class="scan-card scan-card-main">
+                <strong>Peyton</strong>
+                <span>Diario, salud y avisos seguros</span>
+              </div>
+              <div class="scan-card scan-card-secondary">
+                <strong>Nota publica</strong>
+                <span>Lo vi tranquilo cerca de la entrada.</span>
+              </div>
+              <div class="landing-action-preview">
+                <article class="preview-action health">
+                  <strong>Salud</strong>
+                  <span>Reportar emergencia medica</span>
+                </article>
+                <article class="preview-action found">
+                  <strong>Lo encontre</strong>
+                  <span>Enviar ubicacion o nota</span>
+                </article>
+                <article class="preview-action meds">
+                  <strong>Medicacion</strong>
+                  <span>Registrar toma o tratamiento</span>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="experience-strip">
+            <article>
+              <span class="experience-image dog"></span>
+              <strong>Para tutores</strong>
+              <p>Varias mascotas, recordatorios, diario y responsables.</p>
+            </article>
+            <article>
+              <span class="experience-image cat"></span>
+              <strong>Para mascotas</strong>
+              <p>Vista publica segura para avisar sin exponer datos privados.</p>
+            </article>
+            <article>
+              <span class="experience-image capuchin"></span>
+              <strong>Para veterinarios</strong>
+              <p>Buzon de pacientes, fichas vinculadas y seguimiento.</p>
+            </article>
+            <article>
+              <span class="experience-image shop"></span>
+              <strong>Shop</strong>
+              <p>Tag fisico, tema visual, pedido, entrega y activacion.</p>
+            </article>
+          </div>
+          <p class="landing-privacy">Quien lo encuentre puede ayudarte sin ver telefono, direccion ni identidad privada.</p>
+          <div class="store-actions">
+            <button class="primary-action" data-product-start="pet-tag">Comprar tag mascota</button>
+            <button class="ghost-action" data-product-start="tutor-tag">Comprar tag tutor</button>
+            <button class="ghost-action" id="alreadyHaveTag">Ya tengo un tag</button>
+            <button class="ghost-action" data-store-next="how">Ver cómo funciona</button>
+            <button class="ghost-action" id="storeLogin">Login</button>
+          </div>
+        </div>
+
+        <div class="store-step" data-store-step="how" hidden>
+          <p class="eyebrow">Cómo funciona</p>
+          <h2>Compra, prepara y activa.</h2>
+          <div class="store-flow">
+            <span>Elige producto</span>
+            <span>Configura perfil preliminar</span>
+            <span>Finaliza pedido</span>
+            <span>Activa con QR o tag</span>
+          </div>
+          <button class="primary-action full" data-store-next="product">Configurar tag</button>
+          <button class="ghost-action full" data-store-next="landing">Volver</button>
+        </div>
+
+        <div class="store-step" data-store-step="product" hidden>
+          <p class="eyebrow">Producto</p>
+          <h2>¿Qué quieres configurar?</h2>
+          <div class="intent-grid">
+            <button class="intent-card is-selected" data-product-type="pet-tag"><strong>Tag para mi mascota</strong><span>Perfil público seguro para un compañero.</span></button>
+            <button class="intent-card" data-product-type="tutor-tag"><strong>Tag para mí como tutor</strong><span>Acceso a tu red y tus perfiles vinculados.</span></button>
+            <button class="intent-card" data-product-type="multi-pet"><strong>Tag para varias mascotas</strong><span>Ideal para familias, tutores o rescatistas.</span></button>
+            <button class="intent-card" data-product-type="rescue"><strong>Rescate / perro de calle</strong><span>Cuidado comunitario sin dueño formal.</span></button>
+          </div>
+          <button class="primary-action full" data-store-next="color">Continuar</button>
+        </div>
+
+        <div class="store-step" data-store-step="color" hidden>
+          <p class="eyebrow">Colección</p>
+          <h2>Elige el color de tu tag.</h2>
+          <p class="brand-copy">Este color activa el tema visual inicial. Puedes cambiarlo después.</p>
+          <div class="theme-picker">
+            <button class="theme-dot is-selected" style="--theme:#f472b6" data-theme="pink-glow">Pink</button>
+            <button class="theme-dot" style="--theme:#111827" data-theme="black-panther">Black</button>
+            <button class="theme-dot" style="--theme:#38bdf8" data-theme="ocean">Blue</button>
+            <button class="theme-dot" style="--theme:#34d399" data-theme="rescue-nature">Green</button>
+            <button class="theme-dot" style="--theme:#f6c85f" data-theme="royal-gold">Gold</button>
+            <button class="theme-dot" style="--theme:#a78bfa" data-theme="mystic-night">Purple</button>
+          </div>
+          <button class="primary-action full" data-store-next="setup">Preparar perfil</button>
+        </div>
+
+        <div class="store-step" data-store-step="setup" hidden>
+          <p class="eyebrow">Asistente de configuración</p>
+          <h2 id="setupQuestion">¿Cómo se llama?</h2>
+          <p class="brand-copy">Básico ahora. Completar después.</p>
+          <input id="setupAnswer" placeholder="Escribe aquí" />
+          <div class="store-actions compact">
+            <button class="ghost-action" id="skipSetupQuestion">Completar después</button>
+            <button class="primary-action" id="nextSetupQuestion">Continuar</button>
+          </div>
+        </div>
+
+        <div class="store-step" data-store-step="store-preview" hidden>
+          <p class="eyebrow">Vista preliminar</p>
+          <h2>Así se verá su espacio.</h2>
+          <div class="draft-preview">
+            <strong id="draftPreviewName">Nuevo perfil</strong>
+            <span id="draftPreviewType">Tag mascota</span>
+            <p id="draftPreviewNote">Perfil básico preparado. Podrás completar detalles después.</p>
+            <small id="draftPreviewTheme">Tema: Pink Glow</small>
+          </div>
+          <button class="primary-action full" data-store-next="checkout">Continuar a pedido</button>
+        </div>
+
+        <div class="store-step" data-store-step="checkout" hidden>
+          <p class="eyebrow">Pedido</p>
+          <h2>Producto + perfil preliminar</h2>
+          <p class="brand-copy">Al confirmar, se crea tu cuenta preliminar, una orden y el perfil en estado borrador.</p>
+          <div class="profile-fields">
+            <input id="checkoutEmail" placeholder="Correo para crear cuenta" />
+            <input id="checkoutDelivery" placeholder="Entrega. Ej. recoger, zona, mensajeria..." />
+            <select id="checkoutPayment">
+              <option>Pago al confirmar</option>
+              <option>Transferencia</option>
+              <option>Tarjeta</option>
+              <option>Pago contra entrega</option>
+            </select>
+            <input id="checkoutPhone" placeholder="WhatsApp opcional" />
+          </div>
+          <button class="primary-action full" id="confirmStoreOrder">Crear orden y cuenta</button>
+        </div>
+
+        <div class="store-step" data-store-step="post-purchase" hidden>
+          <p class="eyebrow">Orden creada</p>
+          <h2>Tu cuenta y perfil preliminar quedaron listos.</h2>
+          <p class="brand-copy">El perfil queda en modo preparacion. El reveal final cambia cuando recibas el tag y lo actives.</p>
+          <div class="order-status-card" id="orderStatusCard"></div>
+          <button class="primary-action full" id="continueToAppFromStore">Entrar a mi cuenta</button>
+        </div>
+      </section>
+    </main>
+
+    <main class="login-shell" id="authShell" hidden>
+      <section class="login-card">
+        <button class="logo-button" aria-label="Marco Polo">
+          <img class="logo-mark" src="/assets/marco-polo-tag-logo.png" alt="Marco Polo" />
+        </button>
+
+        <div class="auth-step" data-step="welcome">
+          <p class="eyebrow">Entrar a Marco Polo</p>
+          <h1>Marco Polo</h1>
+          <p class="brand-copy">Identidad, cuidado y seguimiento.</p>
+          <div class="auth-actions">
+            <button class="primary-action full" data-next="intent">Crear cuenta</button>
+            <button class="ghost-action full" data-next="login">Ya tengo cuenta</button>
+            <button class="ghost-action full" data-next="admin">Entrada administrador</button>
+          </div>
+        </div>
+
+        <div class="auth-step" data-step="admin" hidden>
+          <p class="eyebrow">Entrada administrador</p>
+          <h2>Marco Polo</h2>
+          <p class="brand-copy">Acceso para administrar perfiles, casos, servicios y permisos.</p>
+          <input id="adminEmail" placeholder="Correo administrador" />
+          <input id="adminPassword" type="password" placeholder="Contraseña" />
+          <button class="primary-action full" id="adminSubmit">Entrar</button>
+          <button class="ghost-action full" data-next="recover">Recuperar contraseña</button>
+          <button class="ghost-action full" data-next="welcome">Volver</button>
+        </div>
+
+        <div class="auth-step" data-step="login" hidden>
+          <p class="eyebrow">Volver a entrar</p>
+          <h2>Marco Polo</h2>
+          <p class="brand-copy" id="loginContext">Accede con tu cuenta para ver tus mascotas, casos o pacientes.</p>
+          <input id="loginEmail" placeholder="Correo electronico" />
+          <input id="loginPassword" type="password" placeholder="Contraseña" />
+          <button class="primary-action full" id="loginSubmit">Entrar</button>
+          <button class="ghost-action full" data-next="recover">Recuperar contraseña</button>
+          <button class="ghost-action full" data-next="welcome">Volver</button>
+        </div>
+
+        <div class="auth-step" data-step="intent" hidden>
+          <p class="eyebrow">Antes de empezar</p>
+          <h2>¿Cómo quieres crear tu espacio?</h2>
+          <div class="intent-grid" id="intentChoices">
+            <button class="intent-card is-selected" data-account-path="pet-first">
+              <strong>Empezar por la mascota</strong>
+              <span>Creas el perfil o caso primero y luego agregas tutor, responsables o comunidad.</span>
+            </button>
+            <button class="intent-card" data-account-path="tutor-first">
+              <strong>Empezar como tutor</strong>
+              <span>Creas tu cuenta y luego agregas una o varias mascotas con varios tutores.</span>
+            </button>
+            <button class="intent-card" data-account-path="vet">
+              <strong>Soy veterinario</strong>
+              <span>Separa tus propias mascotas de los pacientes que llevas.</span>
+            </button>
+          </div>
+          <button class="primary-action full" data-next="account">Continuar</button>
+        </div>
+
+        <div class="auth-step" data-step="account" hidden>
+          <p class="eyebrow">Paso 1 de 3</p>
+          <h2>Marco Polo</h2>
+          <p class="brand-copy" id="accountPathCopy">Pet ID primero. Despues agregas tutor o responsables.</p>
+          <input id="tutorName" placeholder="Tu nombre" />
+          <input id="tutorEmail" placeholder="Correo electronico" />
+          <input id="tutorPassword" type="password" placeholder="Crear contraseña" />
+          <button class="primary-action full" data-next="profile">Continuar</button>
+          <button class="ghost-action full" data-next="recover">Recuperar contraseña</button>
+        </div>
+
+        <div class="auth-step" data-step="recover" hidden>
+          <p class="eyebrow">Recuperar acceso</p>
+          <h2>Marco Polo</h2>
+          <p class="brand-copy">Escribe tu correo y te enviaremos un enlace para volver a entrar.</p>
+          <input id="recoverEmail" placeholder="Correo electronico" />
+          <button class="primary-action full" data-next="welcome">Enviar enlace</button>
+          <button class="ghost-action full" data-next="welcome">Volver</button>
+        </div>
+
+        <div class="auth-step" data-step="profile" hidden>
+          <p class="eyebrow">Paso 2 de 3</p>
+          <h2>Tipo de perfil</h2>
+          <div class="choice-grid" id="profileTypeChoices">
+            <button class="ghost-action is-selected" data-profile-type="Mascota privada">Mascota privada</button>
+            <button class="ghost-action" data-profile-type="Mascota comunitaria">Mascota comunitaria</button>
+            <button class="ghost-action" data-profile-type="Rescate temporal">Rescate temporal</button>
+            <button class="ghost-action" data-profile-type="Caso veterinario">Caso veterinario</button>
+          </div>
+          <button class="primary-action full" data-next="pet">Continuar</button>
+        </div>
+
+        <div class="auth-step" data-step="pet" hidden>
+          <p class="eyebrow">Paso 3 de 3</p>
+          <h2>¿Cómo se llama?</h2>
+          <input id="onboardingPetName" placeholder="Ej. Negro, Chai, Luna, Caso zona 1..." />
+          <label class="upload-line">
+            Subir foto
+            <input id="onboardingPhotoInput" type="file" accept="image/*" />
+          </label>
+          <button class="primary-action full" id="createSpace">Crear espacio</button>
+        </div>
+      </section>
+    </main>
+
+    <main class="app-shell" id="dashboardShell" hidden>
+      <section class="hero-band">
+        <div class="brand-lockup">
+          <button class="logo-button" id="editProfile" aria-label="Editar perfil">
+            <img class="logo-mark" src="/assets/marco-polo-tag-logo.png" alt="Marco Polo" />
+          </button>
+          <div>
+            <p class="eyebrow">Identidad, cuidado y seguimiento</p>
+            <h1>Marco Polo</h1>
+            <p class="brand-copy">Toca el simbolo para editar el perfil de <span data-pet-name>Nuevo perfil</span>.</p>
+          </div>
+        </div>
+        <div class="status-strip">
+          <span>◎ Vinculo publico</span>
+          <span>◇ Perfil seguro</span>
+          <span>◷ Diario</span>
+          <button class="ghost-action" id="switchUserTop">Entrar con otro usuario</button>
+        </div>
+      </section>
+
+      <section class="dashboard-grid">
+        <aside class="pet-console">
+          <input id="photoInput" type="file" accept="image/*" hidden />
+          <button class="pet-orbit" id="openAboutPet">
+            <div class="pet-photo">
+              <img id="petPhoto" src="" alt="Foto de perfil" />
+            </div>
+            <span class="photo-hint">Sobre este perfil</span>
+          </button>
+          <p class="eyebrow">Companero central</p>
+          <h2 data-pet-name>Nuevo perfil</h2>
+          <p class="pet-meta" id="profileMeta">Define edad · raza · estado · zona</p>
+          <div class="profile-communication">
+            <p class="eyebrow">Mensajes del perfil</p>
+            <button class="primary-action" id="requestHelp">Buzón de mensajes</button>
+            <div class="profile-message-grid">
+              <button class="ghost-action" id="chatContacts">Chat y contactos</button>
+              <button class="ghost-action" id="emergencyDirectory">Directorio</button>
+            </div>
+          </div>
+          <button class="critical-card diary-card" id="openDiaryCard">
+            <div>
+              <strong>Diario</strong>
+              <span class="example-text">Ej. ¿Qué pasó hoy? Agrega una nota, síntoma, cuidado o seguimiento.</span>
+            </div>
+          </button>
+          <div class="quick-actions">
+            <button class="ghost-action" id="openResponsibility">Tareas nuevas</button>
+          </div>
+          <div class="side-stack">
+            <button class="side-inbox" id="leftVetInbox">
+              <span class="medical-mark" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <path d="M24 6v36M16 12h16M15 22c6-8 18 8 0 16M33 22c-6-8-18 8 0 16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <strong>Mensajes médicos</strong>
+              <small id="leftVetStatus">Sin mensajes nuevos</small>
+            </button>
+            <button class="side-inbox compact" id="leftProfileLinks">
+              <strong>Vínculos del perfil</strong>
+              <small>Tutores, veterinaria y servicios</small>
+            </button>
+          </div>
+        </aside>
+
+        <section class="care-console">
+          <div class="home-routes">
+            <button id="routeCompanions">
+              <strong>Mis compañeros</strong>
+              <span>Perfiles y casos bajo tu cuidado</span>
+            </button>
+            <button id="openCareMailbox">
+              <strong>Buzón de cuidado</strong>
+              <span id="mailboxCount">0 pendientes</span>
+            </button>
+            <button id="openReminderRoute">
+              <strong>Próximos recordatorios</strong>
+              <span>Crear o revisar tareas con horario</span>
+            </button>
+            <button id="openHistoryRoute">
+              <strong>Actividad reciente</strong>
+              <span>Historial cronológico</span>
+            </button>
+            <button id="pasteLinkRoute">
+              <strong>Pegar enlace</strong>
+              <span>Solicitar vínculo con mascota, tutor o servicio</span>
+            </button>
+            <button id="openCategoriesRoute">
+              <strong>Categorías</strong>
+              <span>Agregar módulos al menú del perfil</span>
+            </button>
+          </div>
+
+          <div class="quick-note">
+            <p class="eyebrow" id="noteContext">Nota libre en Salud</p>
+            <h2>¿Qué pasó hoy?</h2>
+            <textarea id="noteText" placeholder="Ej. Doctor, contacto, tratamiento, sintomas o algo que deba recordarse." rows="4"></textarea>
+            <input class="soft-input" id="alertTime" hidden placeholder="Horario opcional: hoy 8:00 p.m., cada 12 horas..." />
+            <div class="note-actions">
+              <button class="ghost-action" id="toggleAlert">Agregar alerta</button>
+              <button class="send-action" id="saveNote">Guardar</button>
+            </div>
+          </div>
+
+          <div class="community-panel" id="communityPanel" hidden>
+            <div>
+              <p class="eyebrow">Custodia comunitaria</p>
+              <h2>Todos vemos por el</h2>
+              <p>Cuando no hay un tutor formal, el perfil funciona como una red alrededor del caso.</p>
+            </div>
+            <div class="responsible-list">
+              <span class="example-text">Ej. Ana · alimentación</span>
+              <span class="example-text">Ej. Vet aliada</span>
+              <span class="example-text">Ej. Transporte</span>
+            </div>
+          </div>
+
+          <div class="add-category" hidden>
+            <input id="categoryName" placeholder="Agregar categoria: groomer, paseos, alergias..." />
+            <button class="primary-action" id="addCategory">Agregar</button>
+          </div>
+
+          <div class="category-dock" id="categoryDock"></div>
+          <div class="detail-panel" id="detailPanel"></div>
+        </section>
+
+        <aside class="signal-panel">
+          <div class="public-card">
+            <p class="eyebrow">Perfil publico</p>
+            <h2 id="nfcLink">/p/nuevo-perfil</h2>
+            <p>Este vinculo abre la vista publica del perfil.</p>
+            <button class="ghost-action full" id="generateLink">Generar vinculo</button>
+            <button class="ghost-action full" id="copyLink">Copiar vinculo</button>
+            <button class="ghost-action full" id="openPublicProfile">Vista publica</button>
+            <button class="ghost-action full" id="inviteResponsible">Invitar responsable</button>
+          </div>
+          <div class="timeline-card">
+            <p class="eyebrow">Ultimas entradas</p>
+            <div id="latestEntries"></div>
+            <button class="ghost-action full" id="openHistory">Ver historial</button>
+          </div>
+          <button class="vet-action full" id="notifyVet">
+            <span class="medical-mark" aria-hidden="true">
+              <svg viewBox="0 0 48 48">
+                <path d="M24 6v36M16 12h16M15 22c6-8 18 8 0 16M33 22c-6-8-18 8 0 16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            Mensaje médico
+          </button>
+        </aside>
+      </section>
+    </main>
+
+    <button class="fab" id="quickAddButton">+</button>
+
+    <div class="quick-menu" id="quickMenu" hidden>
+      <button id="quickAddCompanion">Agregar compañero</button>
+      <button id="quickInviteResponsible">Invitar responsable</button>
+      <button id="quickLinkVet">Vincular veterinario</button>
+      <button id="quickPasteLink">Pegar enlace</button>
+      <button id="quickCreateReminder">Crear recordatorio</button>
+      <button id="quickObservation">Dejar observación</button>
+    </div>
+
+    <aside class="owl-assistant" id="owlAssistant" aria-live="polite">
+      <button class="owl-avatar" id="owlAssistantButton" aria-label="Asistente Marco Polo">
+        <span class="owl-stage" id="owlStage">
+          <span class="owl-teleport" aria-hidden="true"></span>
+          <span class="owl-halo" aria-hidden="true"></span>
+          <img class="owl-part owl-base owl-base-main" src="/assets/owl/base.png" alt="" />
+          <img class="owl-part owl-base owl-base-lit" src="/assets/owl/base-lit.png" alt="" />
+          <img class="owl-part owl-wings owl-wings-closed" src="/assets/owl/wings-closed.png" alt="" />
+          <img class="owl-part owl-wing owl-wing-left-open" src="/assets/owl/wing-left-open.png" alt="" />
+          <img class="owl-part owl-wing owl-wing-right-open" src="/assets/owl/wing-right-open.png" alt="" />
+          <img class="owl-part owl-torso" src="/assets/owl/torso.png" alt="" />
+          <img class="owl-part owl-head" src="/assets/owl/head.png" alt="" />
+          <span class="owl-eye owl-eye-left" aria-hidden="true"></span>
+          <span class="owl-eye owl-eye-right" aria-hidden="true"></span>
+          <span class="owl-core-light" aria-hidden="true"></span>
+          <span class="owl-egg" aria-hidden="true"></span>
+          <span class="owl-badge" id="owlBadge" hidden>0</span>
+        </span>
+      </button>
+      <div class="owl-hologram" id="owlHologram" hidden></div>
+      <div class="owl-bubble" id="owlBubble" hidden>
+        <p class="eyebrow">Marco Polo</p>
+        <div id="owlBubbleText">Toca una función y te ayudo a configurarla.</div>
+        <div class="owl-actions" id="owlBubbleActions"></div>
+      </div>
+    </aside>
+
+    <div class="modal-backdrop" id="profileModal" hidden>
+      <section class="profile-modal">
+        <button class="close-button" id="closeProfile">×</button>
+        <p class="eyebrow">Editar perfil</p>
+        <h2>Datos principales</h2>
+        <label class="upload-line profile-photo-upload">
+          Cambiar foto de perfil
+          <input id="profilePhotoInput" type="file" accept="image/*" />
+        </label>
+        <input id="petNameInput" placeholder="Nombre del perfil" />
+        <div class="profile-fields">
+          <input id="petAgeInput" placeholder="Edad si no sabes fecha. Ej. 4 años, cachorro" />
+          <input id="petBirthdayInput" type="date" aria-label="Cumpleaños exacto" />
+          <input id="petBirthMonthInput" placeholder="Mes de cumpleaños. Ej. marzo" />
+          <input id="petBirthYearInput" placeholder="Año aproximado. Ej. 2021" />
+          <input id="petBreedInput" placeholder="Raza o mezcla. Ej. mestizo, rottweiler, criollo" />
+          <input id="petSpeciesInput" placeholder="Especie. Ej. perro, gato, otro" />
+          <input id="petZoneInput" placeholder="Zona. Ej. Antigua, zona 1, finca..." />
+        </div>
+        <select id="profileType">
+          <option>Mascota privada</option>
+          <option>Mascota comunitaria</option>
+          <option>Rescate temporal</option>
+          <option>Caso veterinario</option>
+        </select>
+        <select id="profileStatus">
+          <option>Privado</option>
+          <option>Comunitario</option>
+          <option>Rescate activo</option>
+          <option>Emergencia</option>
+        </select>
+        <textarea rows="4" placeholder="Ej. Informacion critica visible, instrucciones o estado actual."></textarea>
+        <div class="settings-block">
+          <p class="eyebrow">Configuración de categorías</p>
+          <div id="categorySettingsList" class="history-list"></div>
+        </div>
+        <div id="customFieldsList" class="history-list"></div>
+        <button class="ghost-action full" id="addCustomField">+ Agregar otro dato</button>
+        <div class="profile-fields" id="customFieldInputs" hidden>
+          <input id="customFieldName" placeholder="Nombre del dato. Ej. Le asustan" />
+          <input id="customFieldValue" placeholder="Valor o descripción. Ej. Cohetes y motos fuertes." />
+        </div>
+        <button class="primary-action full" id="saveProfile">Guardar perfil</button>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" id="responsibilityModal" hidden>
+      <section class="profile-modal">
+        <button class="close-button" id="closeResponsibility">×</button>
+        <p class="eyebrow">Tareas nuevas</p>
+        <h2>¿Qué hay que hacer?</h2>
+        <input id="taskTitleInput" placeholder="Tarea. Ej. dar medicina, llamar veterinaria, revisar herida..." />
+        <textarea id="taskNotesInput" placeholder="Notas para quien va a asumir la tarea." rows="3"></textarea>
+        <label class="toggle-row">
+          <input id="taskScheduleToggle" type="checkbox" />
+          Agregar fecha y horario
+        </label>
+        <div class="profile-fields" id="taskScheduleFields" hidden>
+          <input id="taskDateInput" type="date" />
+          <input id="taskTimeInput" type="time" />
+        </div>
+        <button class="primary-action full" id="joinCare">Agregar tarea</button>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" id="photoModal" hidden>
+      <section class="profile-modal">
+        <button class="close-button" id="cancelPhotoAdjust">×</button>
+        <p class="eyebrow">Ajustar foto</p>
+        <h2>Perfil de mascota</h2>
+        <div class="photo-adjust-frame">
+          <img id="photoAdjustPreview" alt="Vista previa de foto" />
+        </div>
+        <label class="range-label">Zoom <input id="photoZoom" type="range" min="1" max="1.8" step="0.05" value="1" /></label>
+        <label class="range-label">Horizontal <input id="photoX" type="range" min="0" max="100" value="50" /></label>
+        <label class="range-label">Vertical <input id="photoY" type="range" min="0" max="100" value="50" /></label>
+        <button class="primary-action full" id="applyPhotoAdjust">Usar esta foto</button>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" id="actionModal" hidden>
+      <section class="profile-modal">
+        <button class="close-button" id="closeActionModal">×</button>
+        <p class="eyebrow" id="actionEyebrow">Accion</p>
+        <h2 id="actionTitle">Marco Polo</h2>
+        <div id="actionBody" class="action-body"></div>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" id="historyModal" hidden>
+      <section class="profile-modal history-modal">
+        <button class="close-button" id="closeHistory">×</button>
+        <p class="eyebrow">Historial cronologico</p>
+        <h2>Todo lo registrado</h2>
+        <div id="historyList" class="history-list"></div>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" id="pasteLinkModal" hidden>
+      <section class="profile-modal">
+        <button class="close-button" id="closePasteLink">×</button>
+        <p class="eyebrow">Pegar enlace</p>
+        <h2>Tengo un link</h2>
+        <input id="pastedLinkInput" placeholder="Pega aqui /p/slug, /t/token, /s/token, /invite/token..." />
+        <button class="primary-action full" id="resolveLinkButton">Detectar enlace</button>
+        <div id="linkResolverResult"></div>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" id="careMailboxModal" hidden>
+      <section class="profile-modal history-modal">
+        <button class="close-button" id="closeCareMailbox">×</button>
+        <p class="eyebrow">Buzón de cuidado</p>
+        <h2>Solicitudes y mensajes</h2>
+        <div id="careMailboxList" class="mailbox-list"></div>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" id="inviteModal" hidden>
+      <section class="profile-modal">
+        <button class="close-button" id="closeInvite">×</button>
+        <p class="eyebrow">Invitar responsable</p>
+        <h2>Crear invitación</h2>
+        <input id="inviteRoleInput" placeholder="Rol sugerido. Ej. familia, cuidador, veterinario..." />
+        <textarea id="inviteMessageInput" placeholder="Mensaje opcional para quien recibirá el vínculo." rows="3"></textarea>
+        <button class="primary-action full" id="createInviteLink">Generar invitación</button>
+        <p class="public-note" id="inviteResult"></p>
+      </section>
+    </div>
+
+    <main class="public-shell" id="publicProfileShell" hidden>
+      <section class="public-hero">
+        <button class="ghost-action" id="backToDashboard">Volver</button>
+        <button class="ghost-action" id="publicLogin">Soy tutor</button>
+      </section>
+      <section class="public-profile-grid">
+        <div class="public-pet-card">
+          <div class="pet-photo public-photo">
+            <img id="publicPetPhoto" src="" alt="Foto publica" />
+          </div>
+          <p class="eyebrow">Perfil publico</p>
+          <h1 data-pet-name>Nuevo perfil</h1>
+          <p class="pet-meta">Estado visible para quien abre el vinculo publico.</p>
+          <div class="critical-card">
+            <div>
+              <strong>Importante</strong>
+              <span class="example-text">Ej. No alimentar, llamar al responsable, medicamento actual.</span>
+            </div>
+          </div>
+          <button class="primary-action full" id="alertHuman">Avisar a mi humano</button>
+        </div>
+
+        <div class="public-action-card">
+          <p class="eyebrow">Dejar una nota</p>
+          <h2>Contar qué pasó</h2>
+          <p class="muted">Si viste algo, ayudaste o quieres contar qué pasó, escríbelo aquí.</p>
+          <div class="suggestion-list">
+            <button data-suggestion="La encontre en esta zona.">La encontre en esta zona</button>
+            <button data-suggestion="Parece estar herida o asustada.">Parece herida o asustada</button>
+            <button data-suggestion="Puedo esperar unos minutos y coordinar entrega.">Puedo esperar y coordinar</button>
+          </div>
+          <textarea id="publicMessage" placeholder="Ej. Lo vi cerca de la entrada. Estaba tranquilo." rows="4"></textarea>
+          <input id="publicName" placeholder="Tu nombre opcional" />
+          <input id="publicContact" placeholder="Contacto opcional" />
+          <input id="publicLocation" placeholder="Ubicación opcional" />
+          <input id="publicWhen" placeholder="Fecha/hora opcional" />
+          <button class="primary-action full" id="sendPublicMessage">Enviar nota</button>
+          <p class="public-note" id="publicMessageStatus"></p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      let selectedProfileType = "Mascota privada";
+      let selectedAccountPath = "pet-first";
+      let selectedProductType = "pet-tag";
+      let selectedTheme = "pink-glow";
+      let activeVisualTheme = "tech";
+      let currentOrder = null;
+      let activationReveal = false;
+      let setupIndex = 0;
+      const setupAnswers = {};
+      const setupQuestions = [
+        { key: "name", text: "¿Cómo se llama?", placeholder: "Nombre visible del perfil" },
+        { key: "contact", text: "¿Quién debe ser contactado?", placeholder: "Nombre o referencia, sin hacerlo público" },
+        { key: "important", text: "¿Qué información es importante mostrar?", placeholder: "Ej. qué evitar, cómo acercarse, nota importante" },
+        { key: "complete", text: "¿Quieres dejarlo básico o completarlo ahora?", placeholder: "Ej. básico ahora" }
+      ];
+      let pendingPhotoUrl = "";
+      let photoSettings = { zoom: 1, x: 50, y: 50 };
+      const veterinarians = [];
+      const directoryContacts = [];
+      const careMailbox = [];
+      const petCustomFields = [];
+      const foodEntries = [];
+      const medicineEntries = [];
+      const directoryMessages = [];
+      const historyEvents = [];
+      let owlState = "neutral";
+      let owlWingMode = "closed";
+      let owlEggMode = false;
+      let owlHoldTimer = null;
+      let owlPointerDownAt = 0;
+      const owlStateConfig = {
+        neutral: { color: "#2F80FF", wings: "closed", hologram: null },
+        typing: { color: "#EAF6FF", wings: "closed", hologram: null },
+        health: { color: "#8B5CFF", wings: "left-open", hologram: "reminder-suggestion" },
+        veterinary: { color: "#00E5FF", wings: "right-open", hologram: "vet-contact" },
+        family: { color: "#54E88B", wings: "left-open", hologram: "responsibles" },
+        routine: { color: "#FFC56B", wings: "closed", hologram: "reminder-suggestion" },
+        emergency: { color: "#FF4D5E", wings: "both-open", hologram: "emergency-actions" },
+        success: { color: "#54E88B", wings: "closed", hologram: null },
+        notification: { color: "#FFC56B", wings: "left-open", hologram: "care-mailbox" }
+      };
+      const visualThemes = {
+        tech: {
+          label: "Tech nocturno",
+          logo: "/assets/logo-tech.png",
+          accent: "#38bdf8",
+          accent2: "#8b5cf6",
+          warm: "#f6c85f",
+          bg1: "#030712",
+          bg2: "#071522",
+          panel: "rgba(8, 17, 32, .78)",
+          text: "#e0fbff",
+          owl: "#38bdf8",
+          animation: "scan"
+        },
+        classic: {
+          label: "Clásico dorado",
+          logo: "/assets/logo-normal.png",
+          accent: "#f6c85f",
+          accent2: "#d24b2f",
+          warm: "#ffe7a3",
+          bg1: "#090603",
+          bg2: "#241506",
+          panel: "rgba(32, 19, 8, .78)",
+          text: "#fff8d6",
+          owl: "#f6c85f",
+          animation: "gold"
+        },
+        neon: {
+          label: "Neón vivo",
+          logo: "/assets/marco-polo-tag-logo.png",
+          accent: "#ff4fd8",
+          accent2: "#22d3ee",
+          warm: "#fff06a",
+          bg1: "#050011",
+          bg2: "#06154a",
+          panel: "rgba(13, 8, 38, .78)",
+          text: "#fdf2ff",
+          owl: "#ff4fd8",
+          animation: "pulse"
+        },
+        kid: {
+          label: "Infantil adorable",
+          logo: "/assets/marco-polo-tag-logo.png",
+          accent: "#ff9ecb",
+          accent2: "#6ee7f9",
+          warm: "#ffe66d",
+          bg1: "#102a43",
+          bg2: "#7dd3fc",
+          panel: "rgba(255, 255, 255, .18)",
+          text: "#fff8f8",
+          owl: "#ff9ecb",
+          animation: "float"
+        }
+      };
+      let activeVetId = null;
+      const categories = [
+        { id: "health", label: "Salud", accent: "#ff5f5f", icon: "pulse", notes: [] },
+        { id: "food", label: "Alimentacion", accent: "#ffc857", icon: "bowl", notes: [] },
+        { id: "medicine", label: "Medicina", accent: "#6ee7f9", icon: "capsule", notes: [] }
+      ];
+      let activeId = "health";
+      let alertMode = false;
+
+      function showStoreStep(step) {
+        document.querySelectorAll(".store-step").forEach(node => {
+          node.hidden = node.dataset.storeStep !== step;
+        });
+      }
+
+      function productLabel(type) {
+        return {
+          "pet-tag": "Tag mascota",
+          "tutor-tag": "Tag tutor",
+          "multi-pet": "Tag varias mascotas",
+          rescue: "Tag rescate"
+        }[type] || "Tag mascota";
+      }
+
+      function themeLabel(theme) {
+        return {
+          "pink-glow": "Pink Glow",
+          "black-panther": "Black Panther",
+          ocean: "Ocean",
+          "rescue-nature": "Nature / Rescue",
+          "royal-gold": "Premium Gold",
+          "mystic-night": "Mystic Night"
+        }[theme] || "Pink Glow";
+      }
+
+      function productAssistantCopy(type = selectedProductType) {
+        return {
+          "pet-tag": "Este tag crea un perfil público seguro para una mascota. Sirve para que alguien pueda avisarte sin ver tus datos privados.",
+          "tutor-tag": "Este tag es para ti como tutor: abre tu red, tus mascotas vinculadas y accesos rápidos para familia o cuidadores.",
+          "multi-pet": "Este tag funciona mejor para familias o rescatistas con varias mascotas. Puede abrir un menú con varios perfiles.",
+          rescue: "Este flujo es para rescate o mascotas comunitarias. No obliga a tener dueño: crea responsables, notas y seguimiento compartido."
+        }[type] || "Elige qué tipo de tag quieres configurar.";
+      }
+
+      function themeAssistantCopy(theme = selectedTheme) {
+        return {
+          "pink-glow": "Pink activa un perfil dulce y visible. Buena opción para mascotas con una identidad más tierna o familiar.",
+          "black-panther": "Black activa un tema premium y discreto. Ideal si quieres algo serio, elegante y menos colorido.",
+          ocean: "Blue activa confianza y lectura clara. Funciona bien para salud, rescate y perfiles muy prácticos.",
+          "rescue-nature": "Green comunica cuidado y rescate. Es buena opción para comunitarios, adopción o casos compartidos.",
+          "royal-gold": "Gold se siente más premium. Conviene para placas de regalo, familias o perfiles con estética clásica.",
+          "mystic-night": "Purple se siente nocturno y especial. Mantiene el tono futurista sin verse gamer."
+        }[theme] || "El color físico del tag define el tema inicial del perfil. Después se puede cambiar.";
+      }
+
+      function showStoreAssistant(step, extra = {}) {
+        const accentByTheme = {
+          "pink-glow": "#f472b6",
+          "black-panther": "#9ca3af",
+          ocean: "#38bdf8",
+          "rescue-nature": "#34d399",
+          "royal-gold": "#f6c85f",
+          "mystic-night": "#a78bfa"
+        };
+        const accent = extra.accent || accentByTheme[selectedTheme] || visualThemes[activeVisualTheme].owl;
+        const messages = {
+          landing: "Estás en compra. Primero define si el tag es para una mascota, para ti como tutor, para varias mascotas o para rescate.",
+          how: "El flujo correcto es: producto, color, perfil preliminar, pedido, forma de pago y entrega. El perfil final se activa cuando el tag físico llega.",
+          product: "Aquí decides el tipo de vínculo. ¿Será solo para tu mascota, para ti como tutor, para varias mascotas o para rescate comunitario?",
+          color: `El color del tag define el tema inicial del perfil. ${themeAssistantCopy(selectedTheme)}`,
+          setup: setupQuestions[setupIndex] ? `Vamos paso a paso. ${setupQuestions[setupIndex].text} Puedes responder ahora o saltarlo y completarlo después.` : "Ya tengo lo básico para preparar el borrador.",
+          preview: `Borrador listo para ${productLabel(selectedProductType)}. Revisa nombre, tipo y tema antes de pasar al pedido.`,
+          checkout: "Aquí se crea la orden y la cuenta preliminar: producto, color, perfil, forma de pago y entrega.",
+          post: "Orden creada. Ahora entra a tu cuenta para seguir el progreso. El reveal cambia cuando tengas el tag físico y lo actives."
+        };
+        showOwlBubble(messages[step] || messages.landing, [
+          { id: "hide", label: "Entendido" }
+        ], accent);
+      }
+
+      function estimateDeliveryLabel(delivery) {
+        const value = (delivery || "").toLowerCase();
+        if (value.includes("recoger")) return "24 a 48 horas para preparación";
+        if (value.includes("mensaj")) return "2 a 4 días según zona";
+        if (value.includes("internacional")) return "7 a 14 días";
+        return "3 a 5 días estimados";
+      }
+
+      function createDraftUserAndOrder() {
+        const email = document.getElementById("checkoutEmail").value.trim() || setupAnswers.contact || document.getElementById("tutorEmail")?.value || "";
+        const delivery = document.getElementById("checkoutDelivery").value.trim() || "Entrega por definir";
+        const payment = document.getElementById("checkoutPayment").value;
+        const phone = document.getElementById("checkoutPhone").value.trim();
+        currentOrder = {
+          id: `MP-${Math.random().toString(16).slice(2, 8).toUpperCase()}`,
+          userEmail: email,
+          phone,
+          product: productLabel(selectedProductType),
+          theme: themeLabel(selectedTheme),
+          profileName: setupAnswers.name || "Nuevo perfil",
+          delivery,
+          payment,
+          status: "Cuenta creada · Perfil borrador · Orden en preparación",
+          progress: 35,
+          eta: estimateDeliveryLabel(delivery),
+          reveal: "Preparación: vista privada básica. Activación: reveal completo al escanear el tag."
+        };
+        if (email) {
+          document.getElementById("loginEmail").value = email;
+          document.getElementById("tutorEmail").value = email;
+        }
+        document.getElementById("onboardingPetName").value = currentOrder.profileName === "Nuevo perfil" ? "" : currentOrder.profileName;
+        renderOrderStatus();
+      }
+
+      function renderOrderStatus() {
+        const card = document.getElementById("orderStatusCard");
+        if (!card || !currentOrder) return;
+        card.innerHTML = `
+          <div class="order-head">
+            <strong>${currentOrder.id}</strong>
+            <span>${currentOrder.status}</span>
+          </div>
+          <div class="progress-track"><i style="width:${currentOrder.progress}%"></i></div>
+          <div class="order-grid">
+            <span><b>Producto</b>${currentOrder.product}</span>
+            <span><b>Tema</b>${currentOrder.theme}</span>
+            <span><b>Pago</b>${currentOrder.payment}</span>
+            <span><b>Entrega</b>${currentOrder.delivery}</span>
+            <span><b>Tiempo estimado</b>${currentOrder.eta}</span>
+            <span><b>Reveal</b>${currentOrder.reveal}</span>
+          </div>
+        `;
+      }
+
+      function applyVisualTheme(themeId) {
+        const theme = visualThemes[themeId] || visualThemes.tech;
+        activeVisualTheme = themeId;
+        document.body.dataset.visualTheme = themeId;
+        document.body.dataset.logoAnimation = theme.animation;
+        document.documentElement.style.setProperty("--mp-accent", theme.accent);
+        document.documentElement.style.setProperty("--mp-accent-2", theme.accent2);
+        document.documentElement.style.setProperty("--mp-warm", theme.warm);
+        document.documentElement.style.setProperty("--mp-bg-1", theme.bg1);
+        document.documentElement.style.setProperty("--mp-bg-2", theme.bg2);
+        document.documentElement.style.setProperty("--mp-panel", theme.panel);
+        document.documentElement.style.setProperty("--mp-text", theme.text);
+        document.documentElement.style.setProperty("--mp-owl", theme.owl);
+        document.querySelectorAll(".logo-mark").forEach(img => {
+          img.src = theme.logo;
+        });
+        document.getElementById("owlAssistant")?.style.setProperty("--owl-accent", theme.owl);
+      }
+
+      function openThemeChooser() {
+        const cards = Object.entries(visualThemes).map(([id, theme]) => `
+          <button class="theme-card ${activeVisualTheme === id ? "is-selected" : ""}" data-visual-theme="${id}">
+            <img src="${theme.logo}" alt="${theme.label}" />
+            <strong>${theme.label}</strong>
+            <span>
+              <i style="background:${theme.accent}"></i>
+              <i style="background:${theme.accent2}"></i>
+              <i style="background:${theme.warm}"></i>
+            </span>
+          </button>
+        `).join("");
+        showOwlBubble("Elige cómo debe sentirse este perfil. Mantengo el layout, pero cambio logo, botones, reflejos y mi reacción.", [
+          { id: "hide", label: "Cerrar" }
+        ], visualThemes[activeVisualTheme].owl);
+        openAction("Apariencia", "Logo y ambiente", `<div class="theme-card-grid">${cards}</div>`);
+        document.querySelectorAll("[data-visual-theme]").forEach(button => {
+          button.addEventListener("click", () => {
+            applyVisualTheme(button.dataset.visualTheme);
+            showOwlBubble(`Tema aplicado: ${visualThemes[activeVisualTheme].label}.`, [
+              { id: "hide", label: "Listo" }
+            ], visualThemes[activeVisualTheme].owl);
+            document.getElementById("actionModal").hidden = true;
+          });
+        });
+      }
+
+      function renderSetupQuestion() {
+        const question = setupQuestions[setupIndex];
+        document.getElementById("setupQuestion").textContent = question.text;
+        document.getElementById("setupAnswer").placeholder = question.placeholder;
+        document.getElementById("setupAnswer").value = setupAnswers[question.key] || "";
+        showStoreAssistant("setup");
+      }
+
+      function finishSetupAgent() {
+        const name = setupAnswers.name || "Nuevo perfil";
+        document.getElementById("draftPreviewName").textContent = name;
+        document.getElementById("draftPreviewType").textContent = productLabel(selectedProductType);
+        document.getElementById("draftPreviewNote").textContent = setupAnswers.important || "Perfil básico preparado. Podrás completar detalles después.";
+        document.getElementById("draftPreviewTheme").textContent = `Tema: ${themeLabel(selectedTheme)}`;
+        document.getElementById("onboardingPetName").value = name === "Nuevo perfil" ? "" : name;
+        showStoreStep("store-preview");
+        showStoreAssistant("preview");
+      }
+
+      function showAuthStep(step) {
+        document.querySelectorAll(".auth-step").forEach(node => {
+          node.hidden = node.dataset.step !== step;
+        });
+      }
+
+      function enterDashboard() {
+        const nextName = document.getElementById("onboardingPetName").value || "Nuevo perfil";
+        document.querySelectorAll("[data-pet-name]").forEach(node => {
+          node.textContent = nextName;
+        });
+        document.getElementById("petNameInput").value = nextName;
+        document.getElementById("profileMeta").textContent = `${selectedProfileType} · Privado · Guatemala`;
+        document.getElementById("profileType").value = selectedProfileType;
+        document.getElementById("profileStatus").value = selectedProfileType === "Mascota privada" ? "Privado" : "Comunitario";
+        updateCommunityPanel();
+        document.getElementById("authShell").hidden = true;
+        document.getElementById("dashboardShell").hidden = false;
+        if (currentOrder) {
+          addHistory({ at: "Ahora", type: "Pedido", text: `${currentOrder.id}: ${currentOrder.status}. ETA ${currentOrder.eta}.` });
+        }
+        if (activationReveal) {
+          addHistory({ at: "Ahora", type: "Activación", text: "Tag detectado. Reveal completo activado para este perfil." });
+          showOwlBubble("Tag detectado. Ahora sí cambia el reveal: el perfil pasa de borrador a activado y se muestra la experiencia completa.", [
+            { id: "hide", label: "Entendido" }
+          ], visualThemes[activeVisualTheme].owl);
+          activationReveal = false;
+        }
+        renderLatestEntries();
+      }
+
+      function addHistory(item) {
+        historyEvents.unshift({ id: Date.now() + Math.random(), ...item });
+        renderLatestEntries();
+      }
+
+      function renderLatestEntries() {
+        historyEvents.forEach(item => {
+          if (!item.id) item.id = Date.now() + Math.random();
+        });
+        document.getElementById("latestEntries").innerHTML = historyEvents.length ? historyEvents.slice(0, 3).map(item => `
+          <button class="timeline-item" data-history-id="${item.id}"><span>${item.at} · ${item.type}</span><p>${item.text}</p></button>
+        `).join("") : `<div class="empty-state">Aun no hay entradas. Escribe en el diario para empezar el historial.</div>`;
+        bindHistoryItems(document.getElementById("latestEntries"));
+      }
+
+      function bindHistoryItems(root) {
+        root.querySelectorAll("[data-history-id]").forEach(button => {
+          button.addEventListener("click", () => handleHistoryTap(Number(button.dataset.historyId), button));
+        });
+      }
+
+      function closeQuickMenu() {
+        document.getElementById("quickMenu").hidden = true;
+      }
+
+      function showLogin() {
+        document.getElementById("storeShell").hidden = true;
+        document.getElementById("dashboardShell").hidden = true;
+        document.getElementById("publicProfileShell").hidden = true;
+        document.getElementById("authShell").hidden = false;
+        showAuthStep("login");
+      }
+
+      function updateMailboxCount() {
+        const pending = careMailbox.filter(item => item.status === "pendiente").length;
+        document.getElementById("mailboxCount").textContent = `${pending} pendiente${pending === 1 ? "" : "s"}`;
+        const vetPending = careMailbox.filter(item => item.status === "pendiente" && `${item.type} ${item.title}`.toLowerCase().includes("veter")).length;
+        const leftVetStatus = document.getElementById("leftVetStatus");
+        const leftVetInbox = document.getElementById("leftVetInbox");
+        if (leftVetStatus) leftVetStatus.textContent = vetPending ? `${vetPending} mensaje${vetPending === 1 ? "" : "s"} por revisar` : "Sin mensajes nuevos";
+        if (leftVetInbox) leftVetInbox.classList.toggle("has-attention", vetPending > 0);
+      }
+
+      function addMailboxItem(item) {
+        careMailbox.unshift({
+          id: Date.now(),
+          status: "pendiente",
+          pet: document.querySelector("[data-pet-name]").textContent || "Nuevo perfil",
+          createdAt: "Ahora",
+          avatar: document.getElementById("petPhoto")?.src || "",
+          ...item
+        });
+        updateMailboxCount();
+        setOwlGuardianState("notification", { teleport: true });
+      }
+
+      function renderCareMailbox() {
+        const list = document.getElementById("careMailboxList");
+        list.innerHTML = careMailbox.length ? careMailbox.map(item => `
+          <article class="mailbox-item ${item.attention ? "has-attention" : ""}" data-mail-id="${item.id}">
+            <div class="mailbox-chat-head">
+              ${item.avatar ? `<img src="${item.avatar}" alt="${item.pet}" />` : `<span>${item.pet.slice(0, 1)}</span>`}
+              <div>
+                <strong>${item.title}</strong>
+                <small>${item.pet} · ${item.type}</small>
+              </div>
+            </div>
+            <span>${item.createdAt} · ${item.source}</span>
+            <p>${item.body}</p>
+            <div class="mailbox-actions">
+              <button data-mail-action="aceptar" data-mail-id="${item.id}">Aceptar</button>
+              <button data-mail-action="responder" data-mail-id="${item.id}">Responder</button>
+              <button data-mail-action="archivar" data-mail-id="${item.id}">Archivar</button>
+              <button data-mail-action="nota" data-mail-id="${item.id}">Convertir en nota</button>
+              <button data-mail-action="recordatorio" data-mail-id="${item.id}">Crear recordatorio</button>
+              <button data-mail-action="vincular" data-mail-id="${item.id}">Vincular persona</button>
+            </div>
+          </article>
+        `).join("") : `<article class="empty-state">No hay mensajes todavia. Aqui llegaran invitaciones, reportes, observaciones y solicitudes de vínculo.</article>`;
+        document.querySelectorAll("[data-mail-action]").forEach(button => {
+          button.addEventListener("click", () => handleMailboxAction(button.dataset.mailAction, Number(button.dataset.mailId)));
+        });
+      }
+
+      function handleMailboxAction(action, id) {
+        const item = careMailbox.find(mail => mail.id === id);
+        if (!item) return;
+        if (action === "archivar") item.status = "archivado";
+        if (action === "aceptar" || action === "vincular") item.status = "aceptado";
+        if (action === "nota") {
+          const active = categories.find(category => category.id === activeId);
+          active.notes.unshift(item.body);
+          historyEvents.unshift({ at: "Ahora", type: "Nota", text: item.body });
+          render();
+          renderLatestEntries();
+        }
+        if (action === "recordatorio") {
+          historyEvents.unshift({ at: "Ahora", type: "Recordatorio", text: `Recordatorio creado desde buzón: ${item.title}.` });
+          renderLatestEntries();
+        }
+        if (action === "responder") {
+          openAction("Responder", item.title, `<textarea placeholder="Escribe una respuesta libre." rows="4"></textarea><button class="primary-action full">Enviar respuesta</button>`);
+        }
+        updateMailboxCount();
+        renderCareMailbox();
+      }
+
+      function openCareMailbox() {
+        renderCareMailbox();
+        showOwlBubble("Aquí ves los buzones de mensajes por perfil asociado: pacientes, responsables, veterinarios y notas externas. Cada hilo conserva foto, nombre y acciones.", [
+          { id: "hide", label: "Entendido" }
+        ], "#6ee7f9");
+        document.getElementById("careMailboxModal").hidden = false;
+      }
+
+      function openGeneralMessageComposer() {
+        openAction("Mensajes", "Buzón de mensajes", `
+          <textarea id="generalMessageText" placeholder="Escribe el mensaje que quieres dejar en el buzón." rows="4"></textarea>
+          <button class="primary-action full" id="sendGeneralMessage">Enviar mensaje</button>
+        `);
+        document.getElementById("sendGeneralMessage").addEventListener("click", () => {
+          const body = document.getElementById("generalMessageText").value.trim();
+          if (!body) return;
+          addMailboxItem({
+            source: "Tutor",
+            type: "mensaje interno",
+            title: "Nuevo mensaje en el perfil",
+            body,
+            attention: true
+          });
+          addHistory({ at: "Ahora", type: "Mensaje", text: body });
+          document.getElementById("actionModal").hidden = true;
+          openCareMailbox();
+        });
+      }
+
+      function openVetMessageComposer() {
+        const vet = veterinarians.find(entry => entry.id === activeVetId) || veterinarians[0];
+        const targetName = vet?.name || "veterinaria no vinculada";
+        openAction("Veterinaria", `Mensaje para ${targetName}`, `
+          <textarea id="vetMessageText" placeholder="Escribe el resumen para la veterinaria. Ej. síntomas, tratamiento, hora, foto pendiente..." rows="4"></textarea>
+          <button class="vet-action full" id="sendVetMessage">
+            <span class="medical-mark" aria-hidden="true">
+              <svg viewBox="0 0 48 48">
+                <path d="M24 6v36M16 12h16M15 22c6-8 18 8 0 16M33 22c-6-8-18 8 0 16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            Enviar al buzón médico
+          </button>
+        `);
+        document.getElementById("sendVetMessage").addEventListener("click", () => {
+          const body = document.getElementById("vetMessageText").value.trim();
+          if (!body) return;
+          const inviteText = vet?.affiliated
+            ? "Este mensaje queda en el buzón médico de la veterinaria."
+            : `La veterinaria aún no tiene buzón propio. Este mensaje queda visible aquí y puede vincularse con ${vet?.inviteLink || "un enlace de servicio"}.`;
+          addMailboxItem({
+            source: vet?.affiliated ? "Buzón veterinario" : "Red Marco Polo",
+            type: "mensaje veterinario",
+            title: vet ? `${vet.name} · consulta pendiente` : "Consulta veterinaria pendiente",
+            body: `${body} ${inviteText}`,
+            attention: true,
+            avatar: document.getElementById("petPhoto")?.src || ""
+          });
+          addHistory({ at: "Ahora", type: "Veterinaria", text: `Mensaje médico enviado: ${body}`, vetId: vet?.id });
+          document.getElementById("actionModal").hidden = true;
+          showOwlBubble(vet?.affiliated
+            ? `Mensaje enviado al buzón médico de ${vet.name}.`
+            : `Mensaje guardado en este perfil. Cuando la doctora escanee o entre, verá el aviso parpadeante y podrá tocarlo para revisar el buzón.`,
+            [
+              { id: "open-mailbox", label: "Ver buzón" },
+              vet ? { id: "vet-create-profile", label: "Activar perfil vet" } : { id: "add-vet", label: "Agregar vet" }
+            ],
+            "#ff5f5f"
+          );
+        });
+      }
+
+      function normalizePhone(value) {
+        return (value || "").replace(/[^\d+]/g, "");
+      }
+
+      function whatsappUrl(contact, text = "") {
+        const phone = normalizePhone(contact);
+        if (!phone) return "";
+        const normalized = phone.startsWith("+") ? phone.slice(1) : phone;
+        return `https://wa.me/${normalized}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
+      }
+
+      function createServiceInviteLink(vet) {
+        const slug = (vet.name || "veterinaria").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "veterinaria";
+        return `/s/${slug}-${Math.random().toString(16).slice(2, 6)}`;
+      }
+
+      function openVetActionPanel(vet) {
+        const whatsApp = whatsappUrl(vet.contact, `Hola ${vet.name}, quiero consultar sobre ${document.querySelector("[data-pet-name]").textContent}.`);
+        openAction("Veterinaria", vet.name, `
+          <div class="resolver-card">
+            <p>${vet.notes || "Contacto de salud vinculado a este perfil."}</p>
+            <div class="history-list">
+              <article><strong>Contacto</strong><span>${vet.contact || "Sin telefono/WhatsApp agregado"}</span></article>
+              <article><strong>Enlace para afiliacion</strong><span>${vet.inviteLink}</span></article>
+            </div>
+            ${whatsApp ? `<a class="primary-action full" href="${whatsApp}" target="_blank" rel="noreferrer">Abrir WhatsApp</a>` : ""}
+            <button class="ghost-action full" id="messageVetHere">Dejar mensaje aqui</button>
+            ${vet.affiliated ? `<button class="ghost-action full" id="openVetMailbox">Ver mensajes del veterinario</button>` : `<button class="ghost-action full" id="createVetProfile">Crear perfil de veterinario</button>`}
+          </div>
+        `);
+        document.getElementById("messageVetHere").addEventListener("click", () => {
+          addMailboxItem({
+            source: "Tutor",
+            type: "mensaje para veterinaria",
+            title: `Mensaje para ${vet.name}`,
+            body: "Pendiente de escribir. Este hilo queda listo para consulta o seguimiento.",
+            attention: true,
+            avatar: document.getElementById("petPhoto")?.src || ""
+          });
+          openCareMailbox();
+        });
+        document.getElementById("openVetMailbox")?.addEventListener("click", openCareMailbox);
+        document.getElementById("createVetProfile")?.addEventListener("click", () => {
+          vet.affiliated = true;
+            addMailboxItem({
+              source: "Perfil veterinario",
+              type: "buzon de paciente",
+              title: `${vet.name} · pacientes asociados`,
+              body: `Perfil creado. La veterinaria puede pegar ${vet.inviteLink} en Pegar enlace para vincularse y ver su buzon de pacientes.`,
+              attention: true,
+              avatar: document.getElementById("petPhoto")?.src || ""
+            });
+          showOwlBubble(`${vet.name} ya tiene perfil preliminar. Puede entrar como veterinario, pegar este enlace en Pegar enlace y ver aquí el buzón de pacientes asociados: ${vet.inviteLink}`, [
+            { id: "open-mailbox", label: "Ver buzón" },
+            { id: "paste-link", label: "Pegar enlace" }
+          ], "#ff5f5f");
+        });
+      }
+
+      function handleHistoryTap(id, element) {
+        const item = historyEvents.find(entry => entry.id === id);
+        if (!item) return;
+        if (element) moveOwlNearElement(element);
+        if (item.vetId) {
+          const vet = veterinarians.find(entry => entry.id === item.vetId);
+          if (!vet) return;
+          activeVetId = vet.id;
+          const hasWhatsApp = Boolean(whatsappUrl(vet.contact));
+          showOwlBubble(`Esta entrada corresponde a ${vet.name}. Puedo abrir WhatsApp, dejar mensaje interno o crear su perfil veterinario si todavía no está afiliado.`, [
+            ...(hasWhatsApp ? [{ id: "vet-whatsapp", label: "WhatsApp" }] : []),
+            { id: "vet-internal-message", label: "Mensaje aquí" },
+            vet.affiliated ? { id: "open-mailbox", label: "Ver buzón" } : { id: "vet-create-profile", label: "Crear perfil" }
+          ], "#ff5f5f");
+          openVetActionPanel(vet);
+          return;
+        }
+        showOwlBubble(`Entrada: ${item.type}. Puedes convertirla en nota, crear recordatorio o revisar el buzón relacionado.`, [
+          { id: "add-note", label: "Escribir nota" },
+          { id: "open-tasks", label: "Crear tarea" },
+          { id: "open-mailbox", label: "Ver buzón" }
+        ], "#6ee7f9");
+      }
+
+      function resolveLinkKind(value) {
+        if (value.includes("/p/")) return "mascota";
+        if (value.includes("/t/")) return "tutor";
+        if (value.includes("/s/")) return "servicio";
+        if (value.includes("/invite/")) return "invitacion";
+        if (value.includes("/nfc/")) return "placa";
+        return "desconocido";
+      }
+
+      function openPasteLink() {
+        document.getElementById("pastedLinkInput").value = "";
+        document.getElementById("linkResolverResult").innerHTML = "";
+        document.getElementById("pasteLinkModal").hidden = false;
+      }
+
+      function resolvePastedLink() {
+        const value = document.getElementById("pastedLinkInput").value.trim();
+        const kind = resolveLinkKind(value);
+        document.getElementById("linkResolverResult").innerHTML = `
+          <div class="resolver-card">
+            <p class="eyebrow">Detectado: ${kind}</p>
+            <h2>Solicitar vínculo</h2>
+            <label>¿Qué vínculo tienes?</label>
+            <select id="requestedRoleInput">
+              <option>tutor</option>
+              <option>familia</option>
+              <option>cuidador</option>
+              <option>paseador</option>
+              <option>veterinario</option>
+              <option>otro</option>
+            </select>
+            <label>¿En qué puedes ayudar?</label>
+            <div class="chip-grid" id="helpChips">
+              ${["alimentación", "medicina", "paseos", "emergencias", "transporte", "compañía", "observaciones", "otro"].map(item => `<button data-help="${item}">${item}</button>`).join("")}
+            </div>
+            <textarea id="offeredHelpInput" placeholder="Escribe qué puedes hacerte cargo." rows="3"></textarea>
+            <button class="primary-action full" id="sendLinkRequest">Enviar solicitud</button>
+          </div>
+        `;
+        const selectedHelp = new Set();
+        document.querySelectorAll("[data-help]").forEach(button => {
+          button.addEventListener("click", () => {
+            button.classList.toggle("is-selected");
+            selectedHelp.has(button.dataset.help) ? selectedHelp.delete(button.dataset.help) : selectedHelp.add(button.dataset.help);
+          });
+        });
+        document.getElementById("sendLinkRequest").addEventListener("click", () => {
+          const role = document.getElementById("requestedRoleInput").value;
+          const message = document.getElementById("offeredHelpInput").value.trim();
+          addMailboxItem({
+            source: "Enlace pegado",
+            type: "solicitud de vínculo",
+            title: `Solicitud para vincularse como ${role}`,
+            body: `${message || "Sin mensaje adicional."} Ayuda ofrecida: ${Array.from(selectedHelp).join(", ") || "sin seleccionar"}.`,
+          });
+          historyEvents.unshift({ at: "Ahora", type: "Vínculo", text: `Se envio solicitud de vínculo desde un enlace ${kind}.` });
+          renderLatestEntries();
+          document.getElementById("pasteLinkModal").hidden = true;
+        });
+      }
+
+      function updateAccountPathCopy() {
+        const copy = {
+          "pet-first": "Pet ID primero. Despues agregas tutor o responsables.",
+          "tutor-first": "Tutor primero. Despues agregas una o varias mascotas.",
+          "vet": "Cuenta veterinaria con mascotas propias y pacientes."
+        };
+        document.getElementById("accountPathCopy").textContent = copy[selectedAccountPath];
+      }
+
+      function zodiacFromMonthDay(month, day) {
+        const signs = [
+          ["Capricornio", 1, 19], ["Acuario", 2, 18], ["Piscis", 3, 20], ["Aries", 4, 19],
+          ["Tauro", 5, 20], ["Géminis", 6, 20], ["Cáncer", 7, 22], ["Leo", 8, 22],
+          ["Virgo", 9, 22], ["Libra", 10, 22], ["Escorpio", 11, 21], ["Sagitario", 12, 21], ["Capricornio", 12, 31]
+        ];
+        return signs.find(([, endMonth, endDay]) => month < endMonth || (month === endMonth && day <= endDay))?.[0] || "Capricornio";
+      }
+
+      function birthdaySummary() {
+        const exact = document.getElementById("petBirthdayInput")?.value;
+        const month = document.getElementById("petBirthMonthInput")?.value.trim();
+        const year = document.getElementById("petBirthYearInput")?.value.trim();
+        const freeAge = document.getElementById("petAgeInput").value.trim();
+        if (exact) {
+          const date = new Date(`${exact}T00:00:00`);
+          return `cumple ${exact} · signo ${zodiacFromMonthDay(date.getMonth() + 1, date.getDate())}`;
+        }
+        if (month && year) return `cumple aprox. ${month} ${year}`;
+        if (month) return `cumple aprox. ${month}`;
+        if (year) return `nacio aprox. ${year}`;
+        return freeAge || "edad pendiente";
+      }
+
+      function updateProfileMeta() {
+        const age = birthdaySummary();
+        const breed = document.getElementById("petBreedInput").value.trim() || "raza pendiente";
+        const species = document.getElementById("petSpeciesInput").value.trim() || "especie pendiente";
+        const zone = document.getElementById("petZoneInput").value.trim() || "zona pendiente";
+        const status = document.getElementById("profileStatus").value;
+        document.getElementById("profileMeta").textContent = `${species} · ${breed} · ${age} · ${status} · ${zone}`;
+        updateCommunityPanel();
+      }
+
+      function updateCommunityPanel() {
+        const panel = document.getElementById("communityPanel");
+        if (!panel) return;
+        const profileType = document.getElementById("profileType")?.value || selectedProfileType;
+        const status = document.getElementById("profileStatus")?.value || "Privado";
+        const isCommunity = profileType !== "Mascota privada" || ["Comunitario", "Rescate activo", "Emergencia"].includes(status);
+        panel.hidden = !isCommunity;
+      }
+
+      function renderCustomFields() {
+        const list = document.getElementById("customFieldsList");
+        if (!list) return;
+        list.innerHTML = petCustomFields.length ? petCustomFields.map(field => `
+          <article>
+            <strong>${field.name}</strong>
+            <span>${field.value}</span>
+          </article>
+        `).join("") : `<article><strong>Datos personalizados</strong><span>Agrega casillas propias como temperamento, qué evitar, qué le gusta o señas particulares.</span></article>`;
+      }
+
+      function renderCategorySettings() {
+        const list = document.getElementById("categorySettingsList");
+        if (!list) return;
+        list.innerHTML = categories.map(category => `
+          <article class="category-setting-row">
+            ${categorySvg(category.icon, category.accent)}
+            <input data-category-name="${category.id}" value="${category.label}" aria-label="Nombre de categoria ${category.label}" />
+            <button class="ghost-action" data-rename-category="${category.id}">Guardar</button>
+          </article>
+        `).join("");
+        list.querySelectorAll("[data-rename-category]").forEach(button => {
+          button.addEventListener("click", () => {
+            const category = categories.find(item => item.id === button.dataset.renameCategory);
+            const input = list.querySelector(`[data-category-name="${button.dataset.renameCategory}"]`);
+            const nextName = input.value.trim();
+            if (!category || !nextName) return;
+            category.label = nextName;
+            addHistory({ at: "Ahora", type: "Categoría", text: `Se renombró una categoría a ${nextName}.` });
+            renderCategorySettings();
+            render();
+          });
+        });
+      }
+
+      function categorySvg(type, color) {
+        const shapes = {
+          pulse: `<path d="M14 34h9l4-12 8 24 5-13h10" fill="none" stroke="${color}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />`,
+          bowl: `<path d="M17 34h30c-1 10-7 15-15 15s-14-5-15-15Z" fill="none" stroke="${color}" stroke-width="3" /><path d="M22 27c3-5 7-7 12-7 6 0 10 3 11 8" fill="none" stroke="${color}" stroke-width="3" stroke-linecap="round" />`,
+          capsule: `<g transform="rotate(-28 32 32)"><rect x="18" y="25" width="28" height="14" rx="7" fill="none" stroke="${color}" stroke-width="3" /><path d="M32 25v14" stroke="${color}" stroke-width="3" /></g>`,
+          orbit: `<ellipse cx="32" cy="32" rx="22" ry="8" fill="none" stroke="${color}" stroke-width="2.5" transform="rotate(-22 32 32)" /><ellipse cx="32" cy="32" rx="22" ry="8" fill="none" stroke="${color}" stroke-width="2.5" transform="rotate(48 32 32)" /><circle cx="32" cy="32" r="4" fill="${color}" />`
+        };
+        return `<svg viewBox="0 0 64 64" class="category-svg" aria-hidden="true"><circle cx="32" cy="32" r="27" fill="rgba(255,255,255,.03)" stroke="${color}" stroke-width="1.5" />${shapes[type] || shapes.orbit}</svg>`;
+      }
+
+      function render() {
+        const active = categories.find(category => category.id === activeId);
+        document.getElementById("noteContext").textContent = `Nota libre en ${active.label}`;
+        document.getElementById("categoryDock").innerHTML = categories.map(category => `
+          <button class="category-tile ${activeId === category.id ? "is-active" : ""}" style="--tile-accent:${category.accent}" data-id="${category.id}">
+            ${categorySvg(category.icon, category.accent)}
+            <span>${category.label}</span>
+          </button>
+        `).join("");
+        const panel = document.getElementById("detailPanel");
+        panel.style.setProperty("--panel-accent", active.accent);
+        panel.innerHTML = `
+          <div class="panel-heading">
+            ${categorySvg(active.icon, active.accent)}
+            <div>
+              <p class="eyebrow">Contenido de ${active.label}</p>
+              <h2>${active.label}</h2>
+              <p>${active.id === "health" ? "Aqui vive el doctor, contacto, tratamiento y cualquier observacion de salud." : "Notas libres guardadas por la familia."}</p>
+            </div>
+          </div>
+          ${active.id === "health" ? `
+            <div class="vet-box">
+              <p class="eyebrow">Veterinarios</p>
+              <h2>¿Quieres agregar veterinarios?</h2>
+              <div class="profile-fields">
+                <input id="vetNameInput" placeholder="Nombre de veterinario o clinica" />
+                <input id="vetContactInput" placeholder="Telefono, WhatsApp o correo" />
+                <input id="vetNotesInput" placeholder="Notas. Ej. emergencia, especialista, horarios" />
+              </div>
+              <button class="primary-action full" id="addVetButton">Agregar veterinario</button>
+              <div class="history-list vet-list" id="vetList"></div>
+            </div>
+            <div class="vet-box">
+              <p class="eyebrow">Salud</p>
+              <h2>Tratamiento u observación</h2>
+              <textarea id="healthNoteInput" placeholder="Ej. tratamiento indicado, síntoma, revisión, indicación del doctor..." rows="3"></textarea>
+              <button class="primary-action full" id="addHealthNoteButton">Guardar en salud</button>
+            </div>
+          ` : ""}
+          ${active.id === "food" ? `
+            <div class="food-box">
+              <p class="eyebrow">Comidas y recetas</p>
+              <h2>Marca, tipo de comida o receta</h2>
+              <label class="upload-line">
+                Subir foto de concentrado o comida
+                <input id="foodPhotoInput" type="file" accept="image/*" />
+              </label>
+              <div class="profile-fields">
+                <input id="foodNameInput" placeholder="Nombre o marca. Ej. ProPlan, pollo con arroz..." />
+                <input id="foodScheduleInput" placeholder="Horario/cantidad opcional. Ej. 7 a.m. y 6 p.m." />
+              </div>
+              <textarea id="foodRecipeInput" placeholder="Receta o instrucciones. Ej. media taza, agua, suplemento, evitar pollo..." rows="3"></textarea>
+              <button class="primary-action full" id="addFoodButton">Agregar comida</button>
+              <div class="food-gallery" id="foodGallery"></div>
+            </div>
+          ` : ""}
+          ${active.id === "medicine" ? `
+            <div class="medicine-box">
+              <p class="eyebrow">Medicina</p>
+              <h2>Medicamento o tratamiento</h2>
+              <div class="profile-fields">
+                <input id="medicineNameInput" placeholder="Nombre. Ej. antibiótico, suplemento..." />
+                <input id="medicineDoseInput" placeholder="Dosis. Ej. 1 tableta, 2 ml..." />
+                <input id="medicineScheduleInput" placeholder="Horario opcional. Ej. cada 12 horas" />
+                <input id="medicineVetInput" placeholder="Indicado por. Ej. Dra. W..." />
+              </div>
+              <textarea id="medicineNotesInput" placeholder="Notas: duración, con comida, qué observar..." rows="3"></textarea>
+              <button class="primary-action full" id="addMedicineButton">Agregar medicina</button>
+              <div class="history-list" id="medicineList"></div>
+            </div>
+          ` : ""}
+          <div class="entry-list">
+            ${active.notes.length ? active.notes.map(note => `<article class="entry-row"><span>${note}</span></article>`).join("") : `<article class="empty-state">Ej. ${active.id === "health" ? "Doctor, contacto, tratamiento, sintomas o seguimiento." : "Una observacion libre que quieras guardar aqui."}</article>`}
+          </div>
+        `;
+        if (active.id === "health") {
+          renderVets();
+          document.getElementById("addVetButton").addEventListener("click", () => {
+            const name = document.getElementById("vetNameInput").value.trim();
+            const contact = document.getElementById("vetContactInput").value.trim();
+            const notes = document.getElementById("vetNotesInput").value.trim();
+            if (!name && !contact && !notes) return;
+            const vet = { id: Date.now(), name: name || "Veterinario sin nombre", contact, notes, affiliated: false };
+            vet.inviteLink = createServiceInviteLink(vet);
+            veterinarians.unshift(vet);
+            addMailboxItem({
+              source: "Salud",
+              type: "vinculo veterinario",
+              title: `${vet.name} · vínculo pendiente`,
+              body: `Enlace generado para perfil veterinario: ${vet.inviteLink}. Si no está afiliado, puede crear su perfil y pegar este enlace para vincularse.`,
+              attention: true,
+              avatar: document.getElementById("petPhoto")?.src || ""
+            });
+            addHistory({ at: "Ahora", type: "Salud", text: `Se agrego veterinario: ${vet.name}.`, vetId: vet.id });
+            renderVets();
+            showOwlBubble("Listo. Guardé este veterinario. Cuando quieras, puedo ayudarte a hacer consulta o revisar mensajes.", [
+              { id: "vet-message", label: "Hacer consulta" },
+              { id: "vet-mailbox", label: "Ver mensajes" },
+              { id: "vet-create-profile", label: "Crear perfil vet" }
+            ], active.accent);
+            activeVetId = vet.id;
+            document.getElementById("vetNameInput").value = "";
+            document.getElementById("vetContactInput").value = "";
+            document.getElementById("vetNotesInput").value = "";
+          });
+          document.getElementById("addHealthNoteButton").addEventListener("click", () => {
+            const text = document.getElementById("healthNoteInput").value.trim();
+            if (!text) return;
+            active.notes.unshift(text);
+            addHistory({ at: "Ahora", type: "Salud", text });
+            document.getElementById("healthNoteInput").value = "";
+            render();
+          });
+        }
+        if (active.id === "food") {
+          renderFoodEntries();
+          let pendingFoodPhoto = "";
+          document.getElementById("foodPhotoInput").addEventListener("change", event => {
+            const file = event.target.files[0];
+            pendingFoodPhoto = file ? URL.createObjectURL(file) : "";
+          });
+          document.getElementById("addFoodButton").addEventListener("click", () => {
+            const name = document.getElementById("foodNameInput").value.trim();
+            const schedule = document.getElementById("foodScheduleInput").value.trim();
+            const recipe = document.getElementById("foodRecipeInput").value.trim();
+            if (!name && !schedule && !recipe && !pendingFoodPhoto) return;
+            foodEntries.unshift({ name: name || "Comida sin nombre", schedule, recipe, photo: pendingFoodPhoto });
+            active.notes.unshift(`${name || "Comida"}${schedule ? ` · ${schedule}` : ""}${recipe ? ` · ${recipe}` : ""}`);
+            addHistory({ at: "Ahora", type: "Alimentación", text: `Se agrego comida/receta: ${name || schedule || "nueva entrada"}.` });
+            renderFoodEntries();
+            document.getElementById("foodNameInput").value = "";
+            document.getElementById("foodScheduleInput").value = "";
+            document.getElementById("foodRecipeInput").value = "";
+            document.getElementById("foodPhotoInput").value = "";
+            pendingFoodPhoto = "";
+          });
+        }
+        if (active.id === "medicine") {
+          renderMedicineEntries();
+          document.getElementById("addMedicineButton").addEventListener("click", () => {
+            const name = document.getElementById("medicineNameInput").value.trim();
+            const dose = document.getElementById("medicineDoseInput").value.trim();
+            const schedule = document.getElementById("medicineScheduleInput").value.trim();
+            const vet = document.getElementById("medicineVetInput").value.trim();
+            const notes = document.getElementById("medicineNotesInput").value.trim();
+            if (!name && !dose && !schedule && !vet && !notes) return;
+            const entry = { name: name || "Medicina sin nombre", dose, schedule, vet, notes };
+            medicineEntries.unshift(entry);
+            active.notes.unshift(`${entry.name}${dose ? ` · ${dose}` : ""}${schedule ? ` · ${schedule}` : ""}${notes ? ` · ${notes}` : ""}`);
+            addHistory({ at: "Ahora", type: "Medicina", text: `Se agregó medicina: ${entry.name}.` });
+            renderMedicineEntries();
+            document.getElementById("medicineNameInput").value = "";
+            document.getElementById("medicineDoseInput").value = "";
+            document.getElementById("medicineScheduleInput").value = "";
+            document.getElementById("medicineVetInput").value = "";
+            document.getElementById("medicineNotesInput").value = "";
+          });
+        }
+        document.querySelectorAll("[data-id]").forEach(button => {
+          button.addEventListener("click", () => {
+            activeId = button.dataset.id;
+            const selected = categories.find(category => category.id === activeId);
+            moveOwlNearElement(button);
+            render();
+            showOwlBubble(categoryAssistantCopy(selected), categoryAssistantActions(selected), selected.accent);
+          });
+        });
+      }
+
+      function renderVets() {
+        const list = document.getElementById("vetList");
+        if (!list) return;
+        list.innerHTML = veterinarians.length ? veterinarians.map(vet => `
+          <article class="vet-row" data-vet-id="${vet.id}">
+            <strong>${vet.name}</strong>
+            <span>${vet.contact || "Sin contacto agregado"}</span>
+            <span>${vet.notes || "Sin notas"}</span>
+            <small>${vet.affiliated ? "Perfil veterinario activo" : `Pendiente · ${vet.inviteLink}`}</small>
+          </article>
+        `).join("") : `<article><strong>Sin veterinarios todavia</strong><span>Agrega uno o varios contactos de salud para este perfil.</span></article>`;
+        list.querySelectorAll("[data-vet-id]").forEach(row => {
+          row.addEventListener("click", () => {
+            const vet = veterinarians.find(item => item.id === Number(row.dataset.vetId));
+            if (!vet) return;
+            activeVetId = vet.id;
+            moveOwlNearElement(row);
+            openVetActionPanel(vet);
+            showOwlBubble(`${vet.name}: puedes abrir WhatsApp, dejar mensaje en Marco Polo o activar su perfil veterinario.`, [
+              ...(whatsappUrl(vet.contact) ? [{ id: "vet-whatsapp", label: "WhatsApp" }] : []),
+              { id: "vet-internal-message", label: "Mensaje aquí" },
+              vet.affiliated ? { id: "open-mailbox", label: "Ver buzón" } : { id: "vet-create-profile", label: "Crear perfil" }
+            ], "#ff5f5f");
+          });
+        });
+      }
+
+      function renderFoodEntries() {
+        const list = document.getElementById("foodGallery");
+        if (!list) return;
+        list.innerHTML = foodEntries.length ? foodEntries.map(item => `
+          <article class="food-entry">
+            ${item.photo ? `<img src="${item.photo}" alt="Foto de comida" />` : `<div class="food-photo-empty">Sin foto</div>`}
+            <div>
+              <strong>${item.name}</strong>
+              <span>${item.schedule || "Sin horario agregado"}</span>
+              <p>${item.recipe || "Sin receta o instrucciones"}</p>
+            </div>
+          </article>
+        `).join("") : `<article class="empty-state">Sube foto de la marca, tipo de comida o receta cuando quieras.</article>`;
+      }
+
+      function renderMedicineEntries() {
+        const list = document.getElementById("medicineList");
+        if (!list) return;
+        list.innerHTML = medicineEntries.length ? medicineEntries.map(item => `
+          <article>
+            <strong>${item.name}</strong>
+            <span>${item.dose || "Dosis pendiente"}${item.schedule ? ` · ${item.schedule}` : ""}</span>
+            <span>${item.vet ? `Indicado por ${item.vet}` : "Sin veterinario indicado"}</span>
+            <span>${item.notes || "Sin notas adicionales"}</span>
+          </article>
+        `).join("") : `<article><strong>Sin medicinas todavía</strong><span>Agrega medicamento, dosis, horario o tratamiento.</span></article>`;
+      }
+
+      function openAction(eyebrow, title, bodyHtml) {
+        document.getElementById("actionEyebrow").textContent = eyebrow;
+        document.getElementById("actionTitle").textContent = title;
+        document.getElementById("actionBody").innerHTML = bodyHtml;
+        document.getElementById("actionModal").hidden = false;
+      }
+
+      function addProfileCategory(label, icon = "orbit", accent = null) {
+        const clean = label.trim();
+        if (!clean) return;
+        const exists = categories.some(category => category.label.toLowerCase() === clean.toLowerCase());
+        if (exists) return;
+        const colors = ["#34d399", "#a78bfa", "#ff9f43", "#6ee7f9", "#ffc857", "#ff5f5f"];
+        const next = {
+          id: `${clean.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${Date.now()}`,
+          label: clean,
+          accent: accent || colors[categories.length % colors.length],
+          icon,
+          notes: []
+        };
+        categories.push(next);
+        activeId = next.id;
+        render();
+      }
+
+      function openCategoryManager() {
+        const presets = [
+          ["Alergias", "pulse", "#ff5f5f"],
+          ["Paseos", "orbit", "#34d399"],
+          ["Grooming", "orbit", "#a78bfa"],
+          ["Vacunas", "capsule", "#6ee7f9"],
+          ["Peso", "pulse", "#ffc857"],
+          ["Fotos", "orbit", "#f472b6"],
+          ["Veterinario", "pulse", "#00e5ff"],
+          ["Comportamiento", "orbit", "#54e88b"]
+        ];
+        openAction("Perfil", "CategorÃ­as del menÃº", `
+          <p class="muted">Agrega solo lo que este perfil necesita. Cada categorÃ­a aparece en el menÃº y recibe notas libres.</p>
+          <div class="profile-fields">
+            <input id="modalCategoryName" placeholder="Nueva categorÃ­a. Ej. alergias, paseos, vacunas..." />
+            <button class="primary-action full" id="modalAddCategory">Agregar categorÃ­a</button>
+          </div>
+          <div class="category-preset-grid">
+            ${presets.map(([label, icon, color]) => `<button data-category-preset="${label}" data-category-icon="${icon}" data-category-color="${color}" style="--preset:${color}">${label}</button>`).join("")}
+          </div>
+          <div class="history-list">${categories.map(category => `<article><strong>${category.label}</strong><span>Visible en el menÃº del perfil</span></article>`).join("")}</div>
+        `);
+        document.getElementById("modalAddCategory").addEventListener("click", () => {
+          addProfileCategory(document.getElementById("modalCategoryName").value);
+          document.getElementById("actionModal").hidden = true;
+          openCategoryManager();
+        });
+        document.querySelectorAll("[data-category-preset]").forEach(button => {
+          button.addEventListener("click", () => {
+            addProfileCategory(button.dataset.categoryPreset, button.dataset.categoryIcon, button.dataset.categoryColor);
+            document.getElementById("actionModal").hidden = true;
+            openCategoryManager();
+          });
+        });
+      }
+
+      function categoryAssistantCopy(category) {
+        if (category.id === "health") {
+          return veterinarians.length
+            ? "Abrí Salud. Ya hay veterinario guardado: puedo ayudarte a consultar, ver mensajes o agregar otro contacto."
+            : "Abrí Salud. Si quieres, agrega nombre, contacto o enlace de veterinario; yo lo dejo listo para consulta y seguimiento.";
+        }
+        if (category.id === "food") {
+          return "Abrí Alimentación. Escribe libre: qué comió, cuánto comió o si quieres convertirlo en recordatorio.";
+        }
+        if (category.id === "medicine") {
+          return "Abrí Medicina. Puedes guardar tratamiento, dosis u horario; si hace falta, lo convertimos en recordatorio.";
+        }
+        return `Abrí ${category.label}. Escribe primero lo importante; luego le agregamos hora, responsable o recordatorio.`;
+      }
+
+      function categoryAssistantActions(category) {
+        if (category.id === "health") {
+          return veterinarians.length
+            ? [
+              { id: "vet-message", label: "Hacer consulta" },
+              { id: "vet-mailbox", label: "Ver mensajes" },
+              { id: "add-vet", label: "Agregar otro" }
+            ]
+            : [
+              { id: "add-vet", label: "Agregar veterinario" },
+              { id: "paste-link", label: "Pegar enlace" }
+            ];
+        }
+        return [
+          { id: "add-note", label: "Escribir nota" },
+          { id: "open-tasks", label: "Agregar horario" }
+        ];
+      }
+
+      function owlHologramContent(type) {
+        const primaryVet = veterinarians[0];
+        const petName = document.querySelector("[data-pet-name]")?.textContent || "este perfil";
+        const content = {
+          "vet-contact": primaryVet
+            ? `<strong>${primaryVet.name}</strong><span>${primaryVet.contact || "Contacto sin completar"}</span><button data-owl-action="vet-mailbox">Mensaje</button><button data-owl-action="open-mailbox">BuzÃ³n</button>`
+            : `<strong>Sin veterinario vinculado</strong><span>Agrega nombre, WhatsApp, correo o pega el enlace que te compartan.</span><button data-owl-action="add-vet">Vincular veterinario</button>`,
+          "responsibles": `<strong>Responsables</strong><span>Invita tutores, familia o cuidadores. El enlace crea solicitud, no acceso automÃ¡tico.</span><button data-owl-action="responsibles">Ver tutores</button>`,
+          "reminder-suggestion": `<strong>Sugerencia</strong><span>Puedo guardar esto en historial o convertirlo en recordatorio con fecha y hora.</span><button data-owl-action="add-note">Seguir escribiendo</button><button data-owl-action="task-new">Crear tarea</button>`,
+          "emergency-actions": `<strong>AtenciÃ³n para ${petName}</strong><span>Marca esto como importante, avisa al buzÃ³n y revisa contactos de emergencia.</span><button data-owl-action="open-mailbox">BuzÃ³n</button><button data-owl-action="directory">Contactos</button>`,
+          "nfc-link": `<strong>VÃ­nculo pÃºblico</strong><span>Puede generar QR provisional o asociarse al tag cuando llegue.</span><button data-owl-action="open-mailbox">Ver avisos</button>`,
+          "care-mailbox": `<strong>BuzÃ³n de cuidado</strong><span>${careMailbox.length || 0} mensaje(s) o solicitudes pueden revisarse aquÃ­.</span><button data-owl-action="open-mailbox">Abrir buzÃ³n</button>`
+        };
+        return content[type] || "";
+      }
+
+      function setOwlGuardianState(state = "neutral", options = {}) {
+        const assistant = document.getElementById("owlAssistant");
+        const hologram = document.getElementById("owlHologram");
+        const badge = document.getElementById("owlBadge");
+        if (!assistant) return;
+
+        const config = owlStateConfig[state] || owlStateConfig.neutral;
+        owlState = state;
+        owlWingMode = options.wingMode || config.wings;
+        assistant.dataset.owlState = state;
+        assistant.dataset.wingMode = owlWingMode;
+        assistant.style.setProperty("--owl-accent", options.color || config.color);
+
+        if (options.teleport) {
+          assistant.classList.remove("is-teleporting");
+          void assistant.offsetWidth;
+          assistant.classList.add("is-teleporting");
+        }
+
+        const hologramType = Object.prototype.hasOwnProperty.call(options, "hologram") ? options.hologram : config.hologram;
+        if (hologram && hologramType && !owlEggMode) {
+          hologram.innerHTML = owlHologramContent(hologramType);
+          hologram.hidden = false;
+          hologram.querySelectorAll("[data-owl-action]").forEach(button => {
+            button.addEventListener("click", () => handleOwlAction(button.dataset.owlAction));
+          });
+          assistant.classList.add("is-projecting");
+        } else if (hologram) {
+          hologram.hidden = true;
+          assistant.classList.remove("is-projecting");
+        }
+
+        const notificationCount = careMailbox.filter(item => item.status === "pendiente" || item.status === "pending").length;
+        if (badge) {
+          badge.textContent = notificationCount;
+          badge.hidden = notificationCount < 1;
+        }
+      }
+
+      function inferOwlStateFromText(text) {
+        const value = text.toLowerCase();
+        if (/emergencia|convulsi[oÃ³]n|sangre|no respira|perdido|atropell/.test(value)) return "emergency";
+        if (/veterinario|doctor|doctora|cl[iÃ­]nica|consulta|vet/.test(value)) return "veterinary";
+        if (/medicina|pastilla|dosis|tratamiento|inyecci[oÃ³]n|salud/.test(value)) return "health";
+        if (/comi[oÃ³]|comida|agua|concentrado|receta|alimento/.test(value)) return "routine";
+        if (/familia|tutor|responsable|cuidador|paseo/.test(value)) return "family";
+        if (value.trim()) return "typing";
+        return "neutral";
+      }
+
+      function reactOwlToInput(text) {
+        setOwlGuardianState(inferOwlStateFromText(text));
+      }
+
+      function setOwlEggMode(enabled) {
+        const assistant = document.getElementById("owlAssistant");
+        const bubble = document.getElementById("owlBubble");
+        const hologram = document.getElementById("owlHologram");
+        owlEggMode = enabled;
+        assistant.classList.toggle("is-egg", enabled);
+        if (enabled) {
+          bubble.hidden = true;
+          hologram.hidden = true;
+        } else {
+          setOwlGuardianState("success", { teleport: true, hologram: null });
+        }
+      }
+
+      function showOwlBubble(text, actions = [], accent = "#6ee7f9") {
+        const assistant = document.getElementById("owlAssistant");
+        if (owlEggMode) return;
+        assistant.style.setProperty("--owl-accent", accent);
+        setOwlGuardianState(owlState, { color: accent, hologram: null });
+        assistant.classList.add("is-reacting", "is-projecting");
+        window.clearTimeout(window.owlReactionTimer);
+        window.owlReactionTimer = window.setTimeout(() => {
+          assistant.classList.remove("is-reacting", "is-projecting");
+        }, 1100);
+        document.getElementById("owlBubbleText").innerHTML = text;
+        document.getElementById("owlBubbleActions").innerHTML = actions.map(action => `<button data-owl-action="${action.id}">${action.label}</button>`).join("");
+        document.getElementById("owlBubble").hidden = false;
+        document.querySelectorAll("[data-owl-action]").forEach(button => {
+          button.addEventListener("click", () => handleOwlAction(button.dataset.owlAction));
+        });
+      }
+
+      function moveOwlTo(x, y) {
+        const assistant = document.getElementById("owlAssistant");
+        const maxX = Math.max(24, window.innerWidth - 420);
+        const maxY = Math.max(24, window.innerHeight - 180);
+        assistant.style.left = `${Math.min(Math.max(18, x + 18), maxX)}px`;
+        assistant.style.top = `${Math.min(Math.max(18, y + 18), maxY)}px`;
+        assistant.style.bottom = "auto";
+      }
+
+      function moveOwlNearElement(element) {
+        const box = element.getBoundingClientRect();
+        moveOwlTo(box.right, box.top);
+      }
+
+      function handleOwlAction(action) {
+        if (action === "theme-chooser") {
+          openThemeChooser();
+        }
+        if (action === "current-profile") {
+          renderCustomFields();
+          renderCategorySettings();
+          document.getElementById("profileModal").hidden = false;
+        }
+        if (action === "other-pets") {
+          document.getElementById("routeCompanions").click();
+        }
+        if (action === "tutors") {
+          openAction("Tutores", "Personas vinculadas", `<div class="history-list"><article><strong>Sin tutores adicionales</strong><span>Desde aquí se invitarán responsables, familia, veterinario o cuidador con permisos.</span></article></div><button class="primary-action full" id="modalInviteResponsible">Invitar responsable</button>`);
+          document.getElementById("modalInviteResponsible").addEventListener("click", () => document.getElementById("inviteResponsible").click());
+        }
+        if (action === "add-vet") {
+          activeId = "health";
+          render();
+          document.getElementById("vetNameInput")?.focus();
+        }
+        if (action === "vet-message") {
+          document.getElementById("notifyVet").click();
+        }
+        if (action === "vet-mailbox") {
+          openCareMailbox();
+        }
+        if (action === "vet-whatsapp") {
+          const vet = veterinarians.find(entry => entry.id === activeVetId);
+          const url = vet ? whatsappUrl(vet.contact, `Hola ${vet.name}, quiero consultar sobre ${document.querySelector("[data-pet-name]").textContent}.`) : "";
+          if (url) window.open(url, "_blank");
+        }
+        if (action === "vet-internal-message") {
+          const vet = veterinarians.find(entry => entry.id === activeVetId);
+          if (vet) {
+            addMailboxItem({
+              source: "Tutor",
+              type: "mensaje para veterinaria",
+              title: `Mensaje para ${vet.name}`,
+              body: "Consulta pendiente desde historial.",
+              attention: true,
+              avatar: document.getElementById("petPhoto")?.src || ""
+            });
+            openCareMailbox();
+          }
+        }
+        if (action === "vet-create-profile") {
+          const vet = veterinarians.find(entry => entry.id === activeVetId);
+          if (vet) {
+            vet.affiliated = true;
+            addMailboxItem({
+              source: "Perfil veterinario",
+              type: "buzon de paciente",
+              title: `${vet.name} · pacientes asociados`,
+              body: `Perfil preliminar creado. La veterinaria puede pegar ${vet.inviteLink} para vincularse y ver su buzon de pacientes.`,
+              attention: true,
+              avatar: document.getElementById("petPhoto")?.src || ""
+            });
+            openCareMailbox();
+          }
+        }
+        if (action === "add-note") {
+          document.getElementById("noteText").focus();
+        }
+        if (action === "open-tasks") {
+          document.getElementById("openResponsibility").click();
+        }
+        if (action === "open-mailbox") {
+          openCareMailbox();
+        }
+        if (action === "paste-link") {
+          openPasteLink();
+        }
+        if (action === "hide") {
+          document.getElementById("owlBubble").hidden = true;
+        }
+      }
+
+      function showVeterinarianAssistant() {
+        if (veterinarians.length) {
+          showOwlBubble(
+            "Ya tienes veterinario agregado. ¿Quieres hacer una consulta, ver mensajes del veterinario o agregar otro contacto?",
+            [
+              { id: "vet-message", label: "Hacer consulta" },
+              { id: "vet-mailbox", label: "Ver mensajes" },
+              { id: "add-vet", label: "Agregar otro" }
+            ],
+            "#ff5f5f"
+          );
+          return;
+        }
+        showOwlBubble(
+          "Todavía no hay veterinario vinculado. Puedes agregar nombre, teléfono/WhatsApp, correo o pegar un enlace de veterinario.",
+          [
+            { id: "add-vet", label: "Agregar veterinario" },
+            { id: "hide", label: "Después" }
+          ],
+          "#ff5f5f"
+        );
+      }
+
+      function renderDirectoryContacts() {
+        const list = document.getElementById("directoryContactList");
+        if (!list) return;
+        list.innerHTML = directoryContacts.length ? directoryContacts.map(contact => `
+          <article class="contact-row" data-contact-id="${contact.id}">
+            <strong>${contact.name}</strong>
+            <span>${contact.role || "Rol pendiente"}</span>
+            <span>${contact.contact || "Contacto pendiente"}</span>
+          </article>
+        `).join("") : `<article><strong>Sin contactos todavia</strong><span>Agrega nombre, rol y WhatsApp/correo para construir tu directorio.</span></article>`;
+        list.querySelectorAll("[data-contact-id]").forEach(row => {
+          row.addEventListener("click", () => {
+            const contact = directoryContacts.find(item => item.id === Number(row.dataset.contactId));
+            if (contact) openContactMessageComposer(contact);
+          });
+        });
+      }
+
+      function openContactMessageComposer(contact) {
+        openAction("Directorio", `Mensaje para ${contact.name}`, `
+          <p class="muted">${contact.role || "Contacto"} · ${contact.contact || "sin contacto externo"}</p>
+          <select id="contactMessageVoice">
+            <option value="por el perro">Hablando por el perro</option>
+            <option value="al perro">Hablando al perro</option>
+            <option value="tutor">Mensaje de tutor</option>
+          </select>
+          <textarea id="contactMessageText" placeholder="Escribe el mensaje para esta persona." rows="4"></textarea>
+          <button class="primary-action full" id="sendContactMessage">Guardar mensaje</button>
+        `);
+        document.getElementById("sendContactMessage").addEventListener("click", () => {
+          const body = document.getElementById("contactMessageText").value.trim();
+          const voice = document.getElementById("contactMessageVoice").value;
+          if (!body) return;
+          const message = { id: Date.now(), contactId: contact.id, contactName: contact.name, role: contact.role, voice, body, at: "Ahora" };
+          directoryMessages.unshift(message);
+          addMailboxItem({
+            source: "Directorio",
+            type: "chat/contacto",
+            title: `${contact.name} · ${voice}`,
+            body,
+            attention: true
+          });
+          addHistory({ at: "Ahora", type: "Chat", text: `${contact.name}: ${body}` });
+          document.getElementById("actionModal").hidden = true;
+          openChatsAndContacts();
+        });
+      }
+
+      function openChatsAndContacts() {
+        const rows = directoryMessages.length ? directoryMessages.map(message => `
+          <article class="chat-row">
+            <strong>${message.contactName}</strong>
+            <span>${message.at} · ${message.voice}${message.role ? ` · ${message.role}` : ""}</span>
+            <p>${message.body}</p>
+          </article>
+        `).join("") : `<article><strong>Sin mensajes todavía</strong><span>Toca un contacto del directorio para dejar un mensaje hablando por el perro, al perro o como tutor.</span></article>`;
+        openAction("Contactos", "Chats y contactos", `<div class="history-list">${rows}</div>`);
+      }
+
+      function openDirectory() {
+        openAction("Directorio", "Contactos de emergencia", `
+          <div class="profile-fields">
+            <input id="directoryNameInput" placeholder="Nombre. Ej. Ana, Clinica Central..." />
+            <input id="directoryRoleInput" placeholder="Rol. Ej. tutor, veterinaria, transporte..." />
+            <input id="directoryContactInput" placeholder="WhatsApp, telefono o correo" />
+          </div>
+          <button class="primary-action full" id="addDirectoryContact">Agregar contacto</button>
+          <div class="history-list" id="directoryContactList"></div>
+        `);
+        renderDirectoryContacts();
+        document.getElementById("addDirectoryContact").addEventListener("click", () => {
+          const name = document.getElementById("directoryNameInput").value.trim();
+          const role = document.getElementById("directoryRoleInput").value.trim();
+          const contact = document.getElementById("directoryContactInput").value.trim();
+          if (!name && !role && !contact) return;
+          directoryContacts.unshift({ id: Date.now(), name: name || "Contacto sin nombre", role, contact });
+          addHistory({ at: "Ahora", type: "Directorio", text: `Se agrego contacto: ${name || role || contact}.` });
+          renderDirectoryContacts();
+          document.getElementById("directoryNameInput").value = "";
+          document.getElementById("directoryRoleInput").value = "";
+          document.getElementById("directoryContactInput").value = "";
+        });
+      }
+
+      function updatePhotoPreview() {
+        const preview = document.getElementById("photoAdjustPreview");
+        preview.src = pendingPhotoUrl;
+        preview.style.objectPosition = `${photoSettings.x}% ${photoSettings.y}%`;
+        preview.style.transform = `scale(${photoSettings.zoom})`;
+        document.querySelectorAll("#petPhoto, #publicPetPhoto").forEach(img => {
+          img.style.objectPosition = `${photoSettings.x}% ${photoSettings.y}%`;
+          img.style.transform = `scale(${photoSettings.zoom})`;
+        });
+      }
+
+      function openPhotoAdjust(url) {
+        pendingPhotoUrl = url;
+        photoSettings = { zoom: 1, x: 50, y: 50 };
+        document.getElementById("photoZoom").value = 1;
+        document.getElementById("photoX").value = 50;
+        document.getElementById("photoY").value = 50;
+        updatePhotoPreview();
+        document.getElementById("photoModal").hidden = false;
+      }
+
+      document.getElementById("addCategory").addEventListener("click", () => {
+        const input = document.getElementById("categoryName");
+        const label = input.value.trim();
+        if (!label) return;
+        addProfileCategory(label);
+        input.value = "";
+      });
+
+      document.getElementById("toggleAlert").addEventListener("click", () => {
+        alertMode = !alertMode;
+        document.getElementById("alertTime").hidden = !alertMode;
+      });
+
+      document.getElementById("saveNote").addEventListener("click", () => {
+        const noteInput = document.getElementById("noteText");
+        const body = noteInput.value.trim();
+        if (!body) return;
+        const active = categories.find(category => category.id === activeId);
+        const saved = `${alertMode ? "Alerta: " : ""}${body}`;
+        active.notes.unshift(saved);
+        historyEvents.unshift({ at: "Ahora", type: active.label, text: saved });
+        noteInput.value = "";
+        document.getElementById("alertTime").hidden = true;
+        alertMode = false;
+        renderLatestEntries();
+        render();
+      });
+
+      document.getElementById("photoInput").addEventListener("change", event => {
+        const file = event.target.files[0];
+        if (file) openPhotoAdjust(URL.createObjectURL(file));
+      });
+      document.getElementById("profilePhotoInput").addEventListener("change", event => {
+        const file = event.target.files[0];
+        if (file) openPhotoAdjust(URL.createObjectURL(file));
+      });
+
+      document.getElementById("editProfile").addEventListener("click", () => {
+        showOwlBubble("¿Quieres cambiar el ambiente visual, interactuar con este perfil, cambiar a otras mascotas o revisar tutores y responsables?", [
+          { id: "theme-chooser", label: "Cambiar logo/tema" },
+          { id: "current-profile", label: "Este perfil" },
+          { id: "other-pets", label: "Otras mascotas" },
+          { id: "tutors", label: "Tutores" }
+        ], visualThemes[activeVisualTheme].owl);
+      });
+      document.getElementById("openAboutPet").addEventListener("click", () => {
+        renderCustomFields();
+        renderCategorySettings();
+        document.getElementById("profileModal").hidden = false;
+      });
+      document.getElementById("closeProfile").addEventListener("click", () => {
+        updateProfileMeta();
+        document.getElementById("profileModal").hidden = true;
+      });
+      document.getElementById("profileModal").addEventListener("click", event => {
+        if (event.target.id === "profileModal") {
+          document.getElementById("profileModal").hidden = true;
+        }
+      });
+      document.getElementById("openResponsibility").addEventListener("click", () => {
+        showOwlBubble("Abrí Tareas nuevas. Escribe qué tarea es; si necesita horario, activamos fecha y hora. Si no, queda como nota para revisar.", [
+          { id: "add-note", label: "Solo nota" },
+          { id: "hide", label: "Cerrar" }
+        ], "#ffc857");
+        document.getElementById("responsibilityModal").hidden = false;
+      });
+      document.getElementById("closeResponsibility").addEventListener("click", () => {
+        document.getElementById("responsibilityModal").hidden = true;
+      });
+      document.getElementById("responsibilityModal").addEventListener("click", event => {
+        if (event.target.id === "responsibilityModal") {
+          document.getElementById("responsibilityModal").hidden = true;
+        }
+      });
+      document.getElementById("joinCare").addEventListener("click", () => {
+        const taskTitle = document.getElementById("taskTitleInput").value.trim();
+        const taskNotes = document.getElementById("taskNotesInput").value.trim();
+        const scheduled = document.getElementById("taskScheduleToggle").checked;
+        const taskDate = document.getElementById("taskDateInput").value;
+        const taskTime = document.getElementById("taskTimeInput").value;
+        if (!taskTitle && !taskNotes) return;
+        const scheduleText = scheduled && (taskDate || taskTime) ? ` · ${taskDate || "fecha pendiente"} ${taskTime || ""}` : "";
+        historyEvents.unshift({ at: "Ahora", type: "Tarea", text: `${taskTitle || "Nueva tarea"}${scheduleText}${taskNotes ? ` · ${taskNotes}` : ""}` });
+        renderLatestEntries();
+        document.getElementById("taskTitleInput").value = "";
+        document.getElementById("taskNotesInput").value = "";
+        document.getElementById("taskScheduleToggle").checked = false;
+        document.getElementById("taskScheduleFields").hidden = true;
+        document.getElementById("responsibilityModal").hidden = true;
+      });
+      document.getElementById("taskScheduleToggle").addEventListener("change", event => {
+        document.getElementById("taskScheduleFields").hidden = !event.target.checked;
+      });
+      document.getElementById("openDiaryCard").addEventListener("click", () => {
+        document.getElementById("noteText").focus();
+      });
+      document.getElementById("saveProfile").addEventListener("click", () => {
+        document.querySelectorAll("[data-pet-name]").forEach(node => {
+          node.textContent = document.getElementById("petNameInput").value || "Nuevo perfil";
+        });
+        selectedProfileType = document.getElementById("profileType").value;
+        updateProfileMeta();
+        historyEvents.unshift({ at: "Ahora", type: "Perfil", text: "Se actualizo la base de datos del perfil." });
+        renderLatestEntries();
+        document.getElementById("profileModal").hidden = true;
+      });
+      document.getElementById("addCustomField").addEventListener("click", () => {
+        const wrapper = document.getElementById("customFieldInputs");
+        if (wrapper.hidden) {
+          wrapper.hidden = false;
+          return;
+        }
+        const name = document.getElementById("customFieldName").value.trim();
+        const value = document.getElementById("customFieldValue").value.trim();
+        if (!name && !value) return;
+        petCustomFields.unshift({ name: name || "Dato", value: value || "Pendiente" });
+        document.getElementById("customFieldName").value = "";
+        document.getElementById("customFieldValue").value = "";
+        renderCustomFields();
+      });
+      document.getElementById("generateLink").addEventListener("click", () => {
+        const name = document.getElementById("petNameInput").value || "mascota";
+        const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "mascota";
+        const link = `/p/${slug}-${Math.random().toString(16).slice(2, 6)}`;
+        document.getElementById("nfcLink").textContent = link;
+        historyEvents.unshift({ at: "Ahora", type: "Vinculo publico", text: `Se genero el vinculo publico ${link}.` });
+        renderLatestEntries();
+      });
+      document.getElementById("copyLink").addEventListener("click", () => {
+        openAction("Vinculo publico", "Listo para compartir", `<p>${document.getElementById("nfcLink").textContent}</p><p>En produccion esto copiara el enlace para compartirlo o asociarlo a una placa.</p>`);
+      });
+      document.getElementById("openPublicProfile").addEventListener("click", () => {
+        document.getElementById("dashboardShell").hidden = true;
+        document.getElementById("publicProfileShell").hidden = false;
+        document.getElementById("publicPetPhoto").src = document.getElementById("petPhoto").src;
+      });
+      document.getElementById("backToDashboard").addEventListener("click", () => {
+        document.getElementById("publicProfileShell").hidden = true;
+        document.getElementById("dashboardShell").hidden = false;
+      });
+      document.getElementById("publicLogin").addEventListener("click", () => {
+        showLogin();
+      });
+      document.querySelectorAll("[data-suggestion]").forEach(button => {
+        button.addEventListener("click", () => {
+          const message = document.getElementById("publicMessage");
+          message.value = message.value ? `${message.value}\n${button.dataset.suggestion}` : button.dataset.suggestion;
+        });
+      });
+      document.getElementById("sendPublicMessage").addEventListener("click", () => {
+        document.getElementById("publicMessageStatus").textContent = "Gracias. Avisamos a sus tutores.";
+        const body = document.getElementById("publicMessage").value || "Visitante envio una notificacion desde el perfil publico.";
+        historyEvents.unshift({ at: "Ahora", type: "Notificacion externa", text: body });
+        addMailboxItem({
+          source: "Perfil público",
+          type: "mensaje externo",
+          title: "Nueva notificación externa",
+          body,
+        });
+        renderLatestEntries();
+      });
+      document.getElementById("alertHuman").addEventListener("click", () => {
+        document.getElementById("publicMessage").focus();
+      });
+      document.querySelectorAll("[data-store-next]").forEach(button => {
+        button.addEventListener("click", () => {
+          if (button.dataset.storeNext === "setup") {
+            setupIndex = 0;
+            renderSetupQuestion();
+          }
+          showStoreStep(button.dataset.storeNext);
+          const assistantStep = {
+            landing: "landing",
+            how: "how",
+            product: "product",
+            color: "color",
+            setup: "setup",
+            "store-preview": "preview",
+            checkout: "checkout",
+            "post-purchase": "post"
+          }[button.dataset.storeNext];
+          if (assistantStep && button.dataset.storeNext !== "setup") showStoreAssistant(assistantStep);
+        });
+      });
+      document.querySelectorAll("[data-product-start]").forEach(button => {
+        button.addEventListener("click", () => {
+          selectedProductType = button.dataset.productStart;
+          document.querySelectorAll("[data-product-type]").forEach(node => node.classList.toggle("is-selected", node.dataset.productType === selectedProductType));
+          showStoreStep("color");
+          showOwlBubble(`${productAssistantCopy(selectedProductType)} Ahora elige el color físico: ese color define el tema inicial del perfil.`, [
+            { id: "hide", label: "Entendido" }
+          ], visualThemes[activeVisualTheme].owl);
+        });
+      });
+      document.querySelectorAll("[data-product-type]").forEach(button => {
+        button.addEventListener("click", () => {
+          selectedProductType = button.dataset.productType;
+          document.querySelectorAll("[data-product-type]").forEach(node => node.classList.remove("is-selected"));
+          button.classList.add("is-selected");
+          showOwlBubble(productAssistantCopy(selectedProductType), [
+            { id: "hide", label: "Entendido" }
+          ], visualThemes[activeVisualTheme].owl);
+        });
+      });
+      document.querySelectorAll("[data-theme]").forEach(button => {
+        button.addEventListener("click", () => {
+          selectedTheme = button.dataset.theme;
+          document.querySelectorAll("[data-theme]").forEach(node => node.classList.remove("is-selected"));
+          button.classList.add("is-selected");
+          showOwlBubble(themeAssistantCopy(selectedTheme), [
+            { id: "hide", label: "Entendido" }
+          ], button.style.getPropertyValue("--theme") || visualThemes[activeVisualTheme].owl);
+        });
+      });
+      document.getElementById("nextSetupQuestion").addEventListener("click", () => {
+        const question = setupQuestions[setupIndex];
+        setupAnswers[question.key] = document.getElementById("setupAnswer").value.trim();
+        setupIndex += 1;
+        setupIndex >= setupQuestions.length ? finishSetupAgent() : renderSetupQuestion();
+      });
+      document.getElementById("skipSetupQuestion").addEventListener("click", () => {
+        setupIndex += 1;
+        setupIndex >= setupQuestions.length ? finishSetupAgent() : renderSetupQuestion();
+      });
+      document.getElementById("confirmStoreOrder").addEventListener("click", () => {
+        createDraftUserAndOrder();
+        addHistory({ at: "Ahora", type: "Pedido", text: `${currentOrder.id}: cuenta preliminar creada para ${currentOrder.product} con tema ${currentOrder.theme}.` });
+        showStoreStep("post-purchase");
+        showOwlBubble(`Orden ${currentOrder.id} creada. Te llevo al login para que sigas el progreso: ${currentOrder.status}. Tiempo estimado: ${currentOrder.eta}.`, [
+          { id: "hide", label: "Entendido" }
+        ], visualThemes[activeVisualTheme].owl);
+      });
+      document.getElementById("continueToAppFromStore").addEventListener("click", () => {
+        document.getElementById("storeShell").hidden = true;
+        document.getElementById("authShell").hidden = false;
+        showAuthStep("login");
+        document.getElementById("loginContext").textContent = currentOrder
+          ? `Cuenta creada para ${currentOrder.product}. Entra para ver progreso, pago, entrega y activación.`
+          : "Accede con tu cuenta para ver tus mascotas, casos o pacientes.";
+        showOwlBubble("Ya tienes cuenta preliminar. Entra aquí; adentro verás el progreso de la orden y el estado del perfil borrador.", [
+          { id: "hide", label: "Entendido" }
+        ], visualThemes[activeVisualTheme].owl);
+      });
+      document.getElementById("storeLogin").addEventListener("click", showLogin);
+      document.getElementById("alreadyHaveTag").addEventListener("click", () => {
+        activationReveal = true;
+        document.getElementById("storeShell").hidden = true;
+        document.getElementById("authShell").hidden = false;
+        showAuthStep("login");
+        document.getElementById("loginContext").textContent = "Entra para activar tu tag. Al escanear o vincular el código, el reveal cambia de borrador a perfil activo.";
+        showOwlBubble("Si ya tienes el tag, este flujo es diferente: entras, vinculas el código físico y se desbloquea el reveal completo del perfil.", [
+          { id: "hide", label: "Entendido" }
+        ], visualThemes[activeVisualTheme].owl);
+      });
+      document.getElementById("requestHelp").addEventListener("click", () => {
+        showOwlBubble("Abrí el Buzón de mensajes. Aquí pueden caer notas externas, avisos de veterinario, solicitudes de vínculo y respuestas.", [
+          { id: "open-mailbox", label: "Ver buzón" },
+          { id: "hide", label: "Cerrar" }
+        ], "#6ee7f9");
+        openGeneralMessageComposer();
+      });
+      document.getElementById("emergencyDirectory").addEventListener("click", () => {
+        showOwlBubble("Directorio guarda personas y contactos reales. Toca un contacto para dejar un mensaje por el perro, al perro o como tutor.", [
+          { id: "hide", label: "Entendido" }
+        ], "#f6c85f");
+        openDirectory();
+      });
+      document.getElementById("chatContacts").addEventListener("click", () => {
+        showOwlBubble("Chats y contactos muestra los mensajes asociados a personas del directorio. No es un chat abierto: son hilos de cuidado.", [
+          { id: "hide", label: "Entendido" }
+        ], "#6ee7f9");
+        openChatsAndContacts();
+      });
+      document.getElementById("notifyVet").addEventListener("click", () => {
+        showVeterinarianAssistant();
+        openVetMessageComposer();
+      });
+      document.getElementById("openHistory").addEventListener("click", () => {
+        historyEvents.forEach(item => {
+          if (!item.id) item.id = Date.now() + Math.random();
+        });
+        document.getElementById("historyList").innerHTML = historyEvents.length ? historyEvents.map(item => `<button class="history-row" data-history-id="${item.id}"><strong>${item.at} · ${item.type}</strong><span>${item.text}</span></button>`).join("") : `<article><strong>Sin entradas todavia</strong><span>Lo que guardes en el diario, alertas, perfil publico y notificaciones aparecera aqui en orden cronologico.</span></article>`;
+        bindHistoryItems(document.getElementById("historyList"));
+        document.getElementById("historyModal").hidden = false;
+      });
+      document.getElementById("openHistoryRoute").addEventListener("click", () => document.getElementById("openHistory").click());
+      document.getElementById("openReminderRoute").addEventListener("click", () => document.getElementById("openResponsibility").click());
+      document.getElementById("pasteLinkRoute").addEventListener("click", openPasteLink);
+      document.getElementById("openCareMailbox").addEventListener("click", openCareMailbox);
+      document.getElementById("leftVetInbox").addEventListener("click", openCareMailbox);
+      document.getElementById("leftProfileLinks").addEventListener("click", () => {
+        showOwlBubble("Aquí se organizan los vínculos de este perfil: tutores, responsables, veterinaria y servicios. Cada vínculo debe pedir permiso antes de entrar.", [
+          { id: "tutors", label: "Tutores" },
+          { id: "add-vet", label: "Veterinaria" },
+          { id: "paste-link", label: "Pegar enlace" }
+        ], "#f6c85f");
+      });
+      document.getElementById("routeCompanions").addEventListener("click", () => {
+        openAction("Mis compañeros", "Perfiles bajo tu cuidado", `<div class="history-list"><article><strong>${document.querySelector("[data-pet-name]").textContent}</strong><span>Perfil actual. Agrega más compañeros desde el botón +.</span></article></div>`);
+      });
+      document.getElementById("switchUserTop").addEventListener("click", showLogin);
+      document.getElementById("quickAddButton").addEventListener("click", () => {
+        document.getElementById("quickMenu").hidden = !document.getElementById("quickMenu").hidden;
+      });
+      document.getElementById("quickAddCompanion").addEventListener("click", () => {
+        closeQuickMenu();
+        showAuthStep("pet");
+        document.getElementById("dashboardShell").hidden = true;
+        document.getElementById("authShell").hidden = false;
+      });
+      document.getElementById("quickInviteResponsible").addEventListener("click", () => {
+        closeQuickMenu();
+        document.getElementById("inviteResponsible").click();
+      });
+      document.getElementById("quickLinkVet").addEventListener("click", () => {
+        closeQuickMenu();
+        activeId = "health";
+        render();
+        showVeterinarianAssistant();
+        document.getElementById("noteText").focus();
+      });
+      document.getElementById("quickPasteLink").addEventListener("click", () => {
+        closeQuickMenu();
+        showOwlBubble("Pega cualquier vínculo: mascota, tutor, servicio, invitación o tag. Yo detecto qué es y abro el flujo correcto.", [
+          { id: "hide", label: "Entendido" }
+        ], "#a78bfa");
+        openPasteLink();
+      });
+      document.getElementById("quickCreateReminder").addEventListener("click", () => {
+        closeQuickMenu();
+        document.getElementById("openResponsibility").click();
+      });
+      document.getElementById("quickObservation").addEventListener("click", () => {
+        closeQuickMenu();
+        showOwlBubble("Perfecto. Escribe lo que pasó hoy sin llenar formularios; después puedes agregar categoría, hora o recordatorio.", [
+          { id: "open-tasks", label: "Agregar horario" },
+          { id: "hide", label: "Cerrar" }
+        ], "#34d399");
+        document.getElementById("noteText").focus();
+      });
+      document.addEventListener("pointerdown", event => {
+        if (event.target.closest("#owlAssistant, input, textarea, select, .modal-backdrop")) return;
+        const interactive = event.target.closest("button, .category-tile, .home-routes button");
+        if (interactive) moveOwlNearElement(interactive);
+      });
+      document.addEventListener("pointerover", event => {
+        if (event.pointerType !== "mouse" || event.target.closest("#owlAssistant, .modal-backdrop")) return;
+        const interactive = event.target.closest(".category-tile, .home-routes button, .quick-actions button");
+        if (interactive) moveOwlNearElement(interactive);
+      });
+      document.getElementById("owlAssistantButton").addEventListener("click", () => {
+        if (!document.getElementById("storeShell").hidden) {
+          const visibleStep = document.querySelector(".store-step:not([hidden])")?.dataset.storeStep || "landing";
+          const assistantStep = { "store-preview": "preview", "post-purchase": "post" }[visibleStep] || visibleStep;
+          showStoreAssistant(assistantStep);
+          return;
+        }
+        if (!document.getElementById("publicProfileShell").hidden) {
+          showOwlBubble("Estás en la vista pública. Aquí una persona externa puede avisar sin ver datos privados, o un tutor puede entrar con permisos.", [
+            { id: "open-mailbox", label: "Ver buzón" },
+            { id: "hide", label: "Cerrar" }
+          ], visualThemes[activeVisualTheme].owl);
+          return;
+        }
+        showOwlBubble("Estoy aquí para ayudarte según la sección que toques: diario, salud, veterinaria, vínculos, recordatorios o buzón.", [
+          { id: "theme-chooser", label: "Cambiar tema" },
+          { id: "add-vet", label: "Configurar veterinario" },
+          { id: "hide", label: "Cerrar" }
+        ], visualThemes[activeVisualTheme].owl);
+      });
+      document.getElementById("closePasteLink").addEventListener("click", () => {
+        document.getElementById("pasteLinkModal").hidden = true;
+      });
+      document.getElementById("resolveLinkButton").addEventListener("click", resolvePastedLink);
+      document.getElementById("closeCareMailbox").addEventListener("click", () => {
+        document.getElementById("careMailboxModal").hidden = true;
+      });
+      document.getElementById("inviteResponsible").addEventListener("click", () => {
+        document.getElementById("inviteModal").hidden = false;
+      });
+      document.getElementById("closeInvite").addEventListener("click", () => {
+        document.getElementById("inviteModal").hidden = true;
+      });
+      document.getElementById("createInviteLink").addEventListener("click", () => {
+        const role = document.getElementById("inviteRoleInput").value.trim() || "responsable";
+        const token = Math.random().toString(16).slice(2, 8);
+        document.getElementById("inviteResult").textContent = `/invite/${token} · pendiente de aprobación como ${role}`;
+        addMailboxItem({
+          source: "Invitación",
+          type: "invitación creada",
+          title: "Invitación pendiente",
+          body: `Se creó una invitación para rol ${role}. El vínculo no otorga acceso automático.`,
+        });
+      });
+      document.getElementById("closeHistory").addEventListener("click", () => {
+        document.getElementById("historyModal").hidden = true;
+      });
+      document.getElementById("closeActionModal").addEventListener("click", () => {
+        document.getElementById("actionModal").hidden = true;
+      });
+      document.getElementById("actionModal").addEventListener("click", event => {
+        if (event.target.id === "actionModal") document.getElementById("actionModal").hidden = true;
+      });
+      document.getElementById("cancelPhotoAdjust").addEventListener("click", () => {
+        document.getElementById("photoModal").hidden = true;
+      });
+      document.getElementById("photoModal").addEventListener("click", event => {
+        if (event.target.id === "photoModal") document.getElementById("photoModal").hidden = true;
+      });
+      ["photoZoom", "photoX", "photoY"].forEach(id => {
+        document.getElementById(id).addEventListener("input", event => {
+          if (id === "photoZoom") photoSettings.zoom = event.target.value;
+          if (id === "photoX") photoSettings.x = event.target.value;
+          if (id === "photoY") photoSettings.y = event.target.value;
+          updatePhotoPreview();
+        });
+      });
+      document.getElementById("applyPhotoAdjust").addEventListener("click", () => {
+        document.getElementById("petPhoto").src = pendingPhotoUrl;
+        document.getElementById("publicPetPhoto").src = pendingPhotoUrl;
+        updatePhotoPreview();
+        historyEvents.unshift({ at: "Ahora", type: "Perfil", text: "Se actualizo la foto del perfil." });
+        renderLatestEntries();
+        document.getElementById("photoModal").hidden = true;
+      });
+      document.querySelectorAll("[data-next]").forEach(button => {
+        button.addEventListener("click", () => showAuthStep(button.dataset.next));
+      });
+      document.getElementById("loginSubmit").addEventListener("click", enterDashboard);
+      document.getElementById("adminSubmit").addEventListener("click", enterDashboard);
+      document.getElementById("createSpace").addEventListener("click", enterDashboard);
+      document.querySelectorAll("[data-profile-type]").forEach(button => {
+        button.addEventListener("click", () => {
+          selectedProfileType = button.dataset.profileType;
+          document.querySelectorAll("[data-profile-type]").forEach(node => node.classList.remove("is-selected"));
+          button.classList.add("is-selected");
+          document.getElementById("profileType").value = selectedProfileType;
+          document.getElementById("profileStatus").value = selectedProfileType === "Mascota privada" ? "Privado" : "Comunitario";
+          updateCommunityPanel();
+        });
+      });
+      document.querySelectorAll("[data-account-path]").forEach(button => {
+        button.addEventListener("click", () => {
+          selectedAccountPath = button.dataset.accountPath;
+          document.querySelectorAll("[data-account-path]").forEach(node => node.classList.remove("is-selected"));
+          button.classList.add("is-selected");
+          if (selectedAccountPath === "vet") {
+            selectedProfileType = "Caso veterinario";
+            document.getElementById("profileType").value = "Caso veterinario";
+            document.getElementById("profileStatus").value = "Comunitario";
+            updateCommunityPanel();
+          }
+          updateAccountPathCopy();
+        });
+      });
+      document.getElementById("onboardingPhotoInput").addEventListener("change", event => {
+        const file = event.target.files[0];
+        if (file) openPhotoAdjust(URL.createObjectURL(file));
+      });
+      document.getElementById("profileType").addEventListener("change", event => {
+        selectedProfileType = event.target.value;
+        updateCommunityPanel();
+      });
+      document.getElementById("profileStatus").addEventListener("change", updateCommunityPanel);
+
+      render();
+      renderLatestEntries();
+      updateCommunityPanel();
+      applyVisualTheme(activeVisualTheme);
+    </script>
+  </body>
+</html>
