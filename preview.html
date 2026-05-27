@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marco Polo Preview</title>
-    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
     <main class="store-shell" id="storeShell">
@@ -12,77 +12,43 @@
         <div class="store-step" data-store-step="landing">
           <div class="landing-hero">
             <div class="landing-copy">
-              <img class="landing-logo" src="/assets/logo-tech.png" alt="Marco Polo" />
-              <h1>Un perfil vivo para quien no puede explicar que le pasa.</h1>
-              <p class="brand-copy">Identidad, diario, avisos seguros y red de cuidado para mascotas, tutores, veterinarios y rescate.</p>
-              <div class="landing-proof">
-                <span>Vista tutor</span>
-                <span>Perfil publico</span>
-                <span>Buzon veterinario</span>
-                <span>Shop + activacion</span>
-              </div>
-              <div class="skin-rail" aria-label="Skins Marco Polo">
-                <span style="--skin:#eaf6ff">Claro medico</span>
-                <span style="--skin:#38bdf8">Nocturno tech</span>
-                <span style="--skin:#54e88b">Rescate</span>
-                <span style="--skin:#ffc56b">Premium tag</span>
+              <img class="landing-logo" src="assets/logo-tech.png" alt="Marco Polo" />
+              <h1>Marco Polo</h1>
+              <p class="brand-copy">Tag inteligente para mascotas, tutores y rescate. Identidad, cuidado y avisos seguros sin exponer datos privados.</p>
+              <p class="landing-privacy">Quien lo encuentre puede ayudarte sin ver telefono, direccion ni identidad privada.</p>
+              <div class="store-actions">
+                <button class="primary-action" data-product-start="pet-tag">Comprar tag mascota</button>
+                <button class="ghost-action" data-product-start="tutor-tag">Comprar tag tutor</button>
+                <button class="ghost-action" id="alreadyHaveTag">Ya tengo un tag</button>
+                <button class="ghost-action" data-store-next="how">Ver como funciona</button>
+                <button class="ghost-action" id="storeLogin">Login</button>
               </div>
             </div>
-            <div class="landing-media" aria-label="Vista emocional Marco Polo">
-              <img src="/assets/landing-intro.png" alt="Mascotas y vistas de Marco Polo" />
-              <div class="scan-card scan-card-main">
-                <strong>Peyton</strong>
-                <span>Diario, salud y avisos seguros</span>
+            <div class="landing-command-center" aria-label="Marco Polo en uso">
+              <div class="audience-menu" role="tablist" aria-label="Elegir vista">
+                <button class="is-selected" data-landing-usecase="pets">Para mascotas</button>
+                <button data-landing-usecase="tutors">Para tutores</button>
+                <button data-landing-usecase="vets">Para veterinarios</button>
+                <button data-landing-usecase="rescue">Para rescate</button>
+                <button data-landing-usecase="shop">Shop / tags</button>
               </div>
-              <div class="scan-card scan-card-secondary">
-                <strong>Nota publica</strong>
-                <span>Lo vi tranquilo cerca de la entrada.</span>
+              <div class="usecase-screen">
+                <div class="usecase-topbar">
+                  <span id="usecaseKicker">Perfil publico</span>
+                  <strong id="usecaseTitle">Peyton</strong>
+                </div>
+                <div class="usecase-visual" aria-live="polite">
+                  <img id="usecaseImage" src="assets/interface-dashboard-2.png" alt="Interfaz Marco Polo en uso" />
+                  <div class="usecase-live-panel" id="usecaseLivePanel"></div>
+                </div>
               </div>
-              <div class="landing-action-preview">
-                <article class="preview-action health">
-                  <strong>Salud</strong>
-                  <span>Reportar emergencia medica</span>
-                </article>
-                <article class="preview-action found">
-                  <strong>Lo encontre</strong>
-                  <span>Enviar ubicacion o nota</span>
-                </article>
-                <article class="preview-action meds">
-                  <strong>Medicacion</strong>
-                  <span>Registrar toma o tratamiento</span>
-                </article>
+              <div class="usecase-side">
+                <span class="usecase-status" id="usecaseStatus">Activo</span>
+                <h2 id="usecaseSideTitle">Vista mascota</h2>
+                <p id="usecaseSummary">Perfil seguro para que alguien pueda avisar sin ver tus datos privados.</p>
+                <div class="usecase-actions" id="usecaseActions"></div>
               </div>
             </div>
-          </div>
-          <div class="experience-strip">
-            <article>
-              <span class="experience-image dog"></span>
-              <strong>Para tutores</strong>
-              <p>Varias mascotas, recordatorios, diario y responsables.</p>
-            </article>
-            <article>
-              <span class="experience-image cat"></span>
-              <strong>Para mascotas</strong>
-              <p>Vista publica segura para avisar sin exponer datos privados.</p>
-            </article>
-            <article>
-              <span class="experience-image capuchin"></span>
-              <strong>Para veterinarios</strong>
-              <p>Buzon de pacientes, fichas vinculadas y seguimiento.</p>
-            </article>
-            <article>
-              <span class="experience-image shop"></span>
-              <strong>Shop</strong>
-              <p>Tag fisico, tema visual, pedido, entrega y activacion.</p>
-            </article>
-          </div>
-          <p class="landing-privacy">Quien lo encuentre puede ayudarte sin ver telefono, direccion ni identidad privada.</p>
-          <div class="store-actions">
-            <button class="primary-action" data-product-start="pet-tag">Comprar tag mascota</button>
-            <button class="ghost-action" data-product-start="tutor-tag">Comprar tag tutor</button>
-            <button class="ghost-action" id="alreadyHaveTag">Ya tengo un tag</button>
-            <button class="ghost-action" data-store-next="how">Ver cómo funciona</button>
-            <button class="ghost-action" id="storeLogin">Login</button>
           </div>
         </div>
 
@@ -180,7 +146,7 @@
     <main class="login-shell" id="authShell" hidden>
       <section class="login-card">
         <button class="logo-button" aria-label="Marco Polo">
-          <img class="logo-mark" src="/assets/marco-polo-tag-logo.png" alt="Marco Polo" />
+          <img class="logo-mark" src="assets/marco-polo-tag-logo.png" alt="Marco Polo" />
         </button>
 
         <div class="auth-step" data-step="welcome">
@@ -285,7 +251,7 @@
       <section class="hero-band">
         <div class="brand-lockup">
           <button class="logo-button" id="editProfile" aria-label="Editar perfil">
-            <img class="logo-mark" src="/assets/marco-polo-tag-logo.png" alt="Marco Polo" />
+            <img class="logo-mark" src="assets/marco-polo-tag-logo.png" alt="Marco Polo" />
           </button>
           <div>
             <p class="eyebrow">Identidad, cuidado y seguimiento</p>
@@ -451,13 +417,13 @@
         <span class="owl-stage" id="owlStage">
           <span class="owl-teleport" aria-hidden="true"></span>
           <span class="owl-halo" aria-hidden="true"></span>
-          <img class="owl-part owl-base owl-base-main" src="/assets/owl/base.png" alt="" />
-          <img class="owl-part owl-base owl-base-lit" src="/assets/owl/base-lit.png" alt="" />
-          <img class="owl-part owl-wings owl-wings-closed" src="/assets/owl/wings-closed.png" alt="" />
-          <img class="owl-part owl-wing owl-wing-left-open" src="/assets/owl/wing-left-open.png" alt="" />
-          <img class="owl-part owl-wing owl-wing-right-open" src="/assets/owl/wing-right-open.png" alt="" />
-          <img class="owl-part owl-torso" src="/assets/owl/torso.png" alt="" />
-          <img class="owl-part owl-head" src="/assets/owl/head.png" alt="" />
+          <img class="owl-part owl-base owl-base-main" src="assets/owl/base.png" alt="" />
+          <img class="owl-part owl-base owl-base-lit" src="assets/owl/base-lit.png" alt="" />
+          <img class="owl-part owl-wings owl-wings-closed" src="assets/owl/wings-closed.png" alt="" />
+          <img class="owl-part owl-wing owl-wing-left-open" src="assets/owl/wing-left-open.png" alt="" />
+          <img class="owl-part owl-wing owl-wing-right-open" src="assets/owl/wing-right-open.png" alt="" />
+          <img class="owl-part owl-torso" src="assets/owl/torso.png" alt="" />
+          <img class="owl-part owl-head" src="assets/owl/head.png" alt="" />
           <span class="owl-eye owl-eye-left" aria-hidden="true"></span>
           <span class="owl-eye owl-eye-right" aria-hidden="true"></span>
           <span class="owl-core-light" aria-hidden="true"></span>
@@ -690,7 +656,7 @@
       const visualThemes = {
         tech: {
           label: "Tech nocturno",
-          logo: "/assets/logo-tech.png",
+          logo: "assets/logo-tech.png",
           accent: "#38bdf8",
           accent2: "#8b5cf6",
           warm: "#f6c85f",
@@ -703,7 +669,7 @@
         },
         classic: {
           label: "Clásico dorado",
-          logo: "/assets/logo-normal.png",
+          logo: "assets/logo-normal.png",
           accent: "#f6c85f",
           accent2: "#d24b2f",
           warm: "#ffe7a3",
@@ -716,7 +682,7 @@
         },
         neon: {
           label: "Neón vivo",
-          logo: "/assets/marco-polo-tag-logo.png",
+          logo: "assets/marco-polo-tag-logo.png",
           accent: "#ff4fd8",
           accent2: "#22d3ee",
           warm: "#fff06a",
@@ -729,7 +695,7 @@
         },
         kid: {
           label: "Infantil adorable",
-          logo: "/assets/marco-polo-tag-logo.png",
+          logo: "assets/marco-polo-tag-logo.png",
           accent: "#ff9ecb",
           accent2: "#6ee7f9",
           warm: "#ffe66d",
@@ -739,6 +705,93 @@
           text: "#fff8f8",
           owl: "#ff9ecb",
           animation: "float"
+        }
+      };
+      const landingUseCases = {
+        pets: {
+          image: "assets/interface-dashboard-2.png",
+          kicker: "Perfil publico",
+          title: "Peyton",
+          sideTitle: "Vista mascota",
+          status: "Avisos seguros",
+          summary: "Perfil publico con foto, instrucciones y buzón. La persona que escanea puede avisar sin ver datos privados.",
+          actions: ["Avisar a mi humano", "Dejar una nota", "Entrar como tutor"],
+          panel: `
+            <div class="mock-alert"><strong>Peyton esta visible</strong><span>Temperamento, indicaciones y contacto seguro.</span></div>
+            <div class="mock-grid">
+              <div class="mock-feature"><strong>Diario</strong><span>Ultimas entradas permitidas.</span></div>
+              <div class="mock-feature"><strong>Buzon</strong><span>Notas de quien lo vio.</span></div>
+            </div>
+            <div class="mock-row"><strong>Nota publica</strong><span>Lo vi cerca de la entrada. Estaba tranquilo.</span></div>
+          `
+        },
+        tutors: {
+          image: "assets/interface-dashboard-1.png",
+          kicker: "Espacio tutor",
+          title: "Mis companeros",
+          sideTitle: "Vista tutor",
+          status: "Gestion diaria",
+          summary: "Varias mascotas, recordatorios, responsables, diario y enlaces para invitar personas de confianza.",
+          actions: ["Agregar companero", "Pegar enlace", "Ver buzón"],
+          panel: `
+            <div class="mock-grid">
+              <div class="mock-feature"><strong>Peyton</strong><span>2 recordatorios hoy.</span></div>
+              <div class="mock-feature"><strong>Chai</strong><span>Perfil comunitario.</span></div>
+            </div>
+            <div class="mock-row"><strong>Que paso hoy?</strong><span>Escribe una observacion y el sistema la ordena.</span></div>
+            <div class="mock-row"><strong>Responsables</strong><span>Familia, cuidador, paseo, emergencia.</span></div>
+          `
+        },
+        vets: {
+          image: "assets/interface-dashboard-reference.png",
+          kicker: "Buzon veterinario",
+          title: "Pacientes asociados",
+          sideTitle: "Vista veterinaria",
+          status: "Seguimiento",
+          summary: "Buzon de pacientes, fichas vinculadas, observaciones, mensajes y solicitudes desde perfiles asociados.",
+          actions: ["Ver pacientes", "Responder solicitud", "Crear perfil vet"],
+          panel: `
+            <div class="mock-alert"><strong>Nueva solicitud de Peyton</strong><span>Vomito despues de comer. Timeline adjunto.</span></div>
+            <div class="mock-grid">
+              <div class="mock-feature"><strong>Ficha</strong><span>Datos autorizados.</span></div>
+              <div class="mock-feature"><strong>Mensajes</strong><span>Hilos por paciente.</span></div>
+            </div>
+            <div class="mock-row"><strong>Dra. Walleska Moss</strong><span>WhatsApp, notas y seguimiento en Marco Polo.</span></div>
+          `
+        },
+        rescue: {
+          image: "assets/interface-dashboard-1.png",
+          kicker: "Caso compartido",
+          title: "Negro · Zona 1",
+          sideTitle: "Vista rescate",
+          status: "Red de cuidado",
+          summary: "Casos comunitarios sin dueño formal: tareas, responsables, avistamientos, notas y estado de recuperación.",
+          actions: ["Me hago responsable", "Agregar tarea", "Crear QR provisional"],
+          panel: `
+            <div class="mock-alert"><strong>Rescate activo</strong><span>Herida reportada. Transporte pendiente.</span></div>
+            <div class="mock-grid">
+              <div class="mock-feature"><strong>Alimentacion</strong><span>Marta · 6:00 pm.</span></div>
+              <div class="mock-feature"><strong>Transporte</strong><span>Carlos pendiente.</span></div>
+            </div>
+            <div class="mock-row"><strong>Avistamiento</strong><span>Visto frente al mercado hace 20 min.</span></div>
+          `
+        },
+        shop: {
+          image: "assets/interface-dashboard-2.png",
+          kicker: "Shop + activacion",
+          title: "Tag Marco Polo",
+          sideTitle: "Compra y activacion",
+          status: "Pedido guiado",
+          summary: "El color del tag define el tema inicial. La compra crea usuario, borrador, orden, entrega y activacion.",
+          actions: ["Elegir color", "Preparar perfil", "Ver progreso"],
+          panel: `
+            <div class="mock-alert"><strong>Color del tag</strong><span>Blue activa un tema claro, practico y confiable.</span></div>
+            <div class="mock-grid">
+              <div class="mock-feature"><strong>Pedido</strong><span>Producto + entrega.</span></div>
+              <div class="mock-feature"><strong>Reveal</strong><span>Cambia al activar tag.</span></div>
+            </div>
+            <div class="mock-row"><strong>QR provisional</strong><span>Exportar imagen mientras llega el tag.</span></div>
+          `
         }
       };
       let activeVetId = null;
@@ -754,6 +807,22 @@
         document.querySelectorAll(".store-step").forEach(node => {
           node.hidden = node.dataset.storeStep !== step;
         });
+      }
+
+      function renderLandingUsecase(id = "pets") {
+        const data = landingUseCases[id] || landingUseCases.pets;
+        document.querySelectorAll("[data-landing-usecase]").forEach(button => {
+          button.classList.toggle("is-selected", button.dataset.landingUsecase === id);
+        });
+        document.getElementById("usecaseKicker").textContent = data.kicker;
+        document.getElementById("usecaseTitle").textContent = data.title;
+        document.getElementById("usecaseStatus").textContent = data.status;
+        document.getElementById("usecaseSideTitle").textContent = data.sideTitle;
+        document.getElementById("usecaseSummary").textContent = data.summary;
+        document.getElementById("usecaseActions").innerHTML = data.actions.map(action => `<span>${action}</span>`).join("");
+        document.getElementById("usecaseImage").src = data.image;
+        document.getElementById("usecaseImage").alt = `${data.sideTitle} Marco Polo en uso`;
+        document.getElementById("usecaseLivePanel").innerHTML = data.panel;
       }
 
       function productLabel(type) {
@@ -2215,6 +2284,10 @@
           }[button.dataset.storeNext];
           if (assistantStep && button.dataset.storeNext !== "setup") showStoreAssistant(assistantStep);
         });
+      });
+      renderLandingUsecase("pets");
+      document.querySelectorAll("[data-landing-usecase]").forEach(button => {
+        button.addEventListener("click", () => renderLandingUsecase(button.dataset.landingUsecase));
       });
       document.querySelectorAll("[data-product-start]").forEach(button => {
         button.addEventListener("click", () => {
